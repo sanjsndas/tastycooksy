@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — TastyCooksy</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FAFAFA; /* Cloud White */
+            color: #000000; /* Changed to Black for text */
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        /* Custom Tailwind Configuration for colors and font */
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        @layer base {
+            :root {
+                --color-zesty-lemon-yellow: #FFEB3B;
+                --color-bold-berry-red: #E53935;
+                --color-cloud-white: #FAFAFA;
+                --color-fresh-mint-green: #66BB6A;
+                --color-slate-gray: #455A64; /* Keeping this for specific elements if needed, but main text is black */
+            }
+        }
+
+        .bg-zesty-lemon-yellow { background-color: var(--color-zesty-lemon-yellow); }
+        .text-zesty-lemon-yellow { color: var(--color-zesty-lemon-yellow); }
+        .bg-bold-berry-red { background-color: var(--color-bold-berry-red); }
+        .text-bold-berry-red { color: var(--color-bold-berry-red); }
+        .bg-cloud-white { background-color: var(--color-cloud-white); }
+        .text-cloud-white { color: var(--color-cloud-white); }
+        .bg-fresh-mint-green { background-color: var(--color-fresh-mint-green); }
+        .text-fresh-mint-green { color: var(--color-fresh-mint-green); }
+        .bg-slate-gray { background-color: var(--color-slate-gray); }
+        /* Changed main text color to black, ensuring contrast on white backgrounds */
+        .text-black-main { color: #000000; } 
+
+        /* Specific styles for navigation links */
+        nav a {
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            color: #E53935; /* Bold Berry Red on hover */
+            transform: translateY(-2px);
+        }
+        .btn-primary {
+            background-color: #FFEB3B; /* Zesty Lemon Yellow */
+            color: #000000; /* Changed to Black */
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px; /* Fully rounded */
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary:hover {
+            background-color: #FFD600; /* Slightly darker yellow */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        .btn-secondary {
+            background-color: #66BB6A; /* Fresh Mint Green */
+            color: #FAFAFA; /* Cloud White */
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-secondary:hover {
+            background-color: #5CB85C; /* Slightly darker green */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        .card {
+            background-color: #FFFFFF; /* Pure White for cards */
+            border-radius: 1rem; /* Rounded corners */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+        .section-heading {
+            color: #E53935; /* Bold Berry Red */
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #E53935, #FFEB3B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="font-inter bg-cloud-white text-black-main">
+
+    <!-- Header Section -->
+    <header class="bg-cloud-white shadow-md py-4">
+        <div class="container flex flex-col md:flex-row justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center mb-4 md:mb-0">
+                <img src="https://placehold.co/60x60/FFEB3B/455A64?text=TC" alt="TastyCooksy Logo" class="rounded-full mr-3 shadow-md">
+                <h1 class="text-3xl font-bold text-bold-berry-red">TastyCooksy</h1>
+            </div>
+            <!-- Navigation -->
+            <nav>
+                <ul class="flex flex-wrap justify-center md:justify-end space-x-4 md:space-x-8 text-lg font-medium">
+                    <li><a href="index.html" class="text-black-main hover:text-bold-berry-red rounded-md px-3 py-2">Home</a></li>
+                    <li><a href="blog.html" class="text-black-main hover:text-bold-berry-red rounded-md px-3 py-2">Blog</a></li>
+                    <li><a href="privacy.html" class="text-black-main hover:text-bold-berry-red rounded-md px-3 py-2">Privacy</a></li>
+                    <li><a href="terms.html" class="text-black-main hover:text-bold-berry-red rounded-md px-3 py-2">Terms</a></li>
+                    <li><a href="cookies.html" class="text-black-main hover:text-bold-berry-red rounded-md px-3 py-2">Cookies</a></li>
+                    <li><a href="contact.html" class="text-black-main hover:text-bold-berry-red rounded-md px-3 py-2">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container py-16">
+        <section class="mb-16 card p-8 bg-bold-berry-red text-black">
+            <h2 class="section-heading text-cloud-white">🔒 Privacy Policy</h2>
+            <div class="text-sm leading-relaxed opacity-90">
+                <p class="mb-4">At TastyCooksy, your privacy is super important to us! We're committed to protecting your personal information and being transparent about how we collect, use, and share it. This Privacy Policy explains our practices regarding your data when you visit or use TastyCooksy.com. By using our website, you agree to the collection and use of information in accordance with this policy. We believe in making our privacy practices as clear and understandable as our recipes – fast, fun, and foolproof. We encourage you to read this policy carefully to understand how your data is handled and what rights you have.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">1. Information We Collect</h3>
+                <p class="mb-4">We collect different types of information to provide and improve our service to you. This includes:</p>
+                <ul class="list-disc list-inside ml-4 mb-4">
+                    <li><strong>Personal Data:</strong> While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you ("Personal Data"). This may include, but is not limited to:
+                        <ul class="list-circle list-inside ml-8 mt-2">
+                            <li>Email address (e.g., for newsletters, account creation, password resets). Providing your email allows us to send you updates, new recipe alerts, and manage your subscription preferences.</li>
+                            <li>First name and last name (e.g., for personalizing your experience, addressing you in communications, or displaying your name on community posts). This helps us make your TastyCooksy journey feel more tailored and friendly.</li>
+                            <li>Usage Data (e.g., how you interact with the site, which recipes you view, how long you spend on certain pages, your search queries). This data helps us understand popular content and areas for improvement.</li>
+                            <li>Any other information you voluntarily provide when interacting with our features, such as comments on recipes, submissions to the community wall, or messages sent through our contact forms.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Usage Data:</strong> We automatically collect information about how the Service is accessed and used ("Usage Data"). This Usage Data may include information such as your computer's Internet Protocol address (e.g., IP address), browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers (like mobile device IDs), referring/exit pages, and other diagnostic data. This helps us analyze trends, administer the site, track user movement, and gather broad demographic information for aggregate use. We use this data to ensure our website is performing optimally and to identify areas where we can enhance your experience, such as optimizing for different devices or improving navigation.</li>
+                    <li><strong>Cookies and Tracking Technologies:</strong> We use cookies and similar tracking technologies to track the activity on our Service and hold certain information. Cookies are small data files placed on your device (computer, tablet, or mobile phone) when you visit a website. They often include an anonymous unique identifier. Cookies are sent to your browser from a website and stored on your device. Tracking technologies also used are beacons, tags, and scripts to collect and track information and to improve and analyze our Service. These technologies help us remember your preferences, understand how you use our site, and deliver a more personalized experience. For example, cookies can help us remember which recipes you've favorited or keep you logged in. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Service or certain features may not function as intended. Please refer to our separate <a href="cookies.html" class="text-zesty-lemon-yellow hover:underline">Cookies Policy</a> for more detailed information on how we use cookies.</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">2. How We Use Your Information</h3>
+                <p class="mb-4">TastyCooksy uses the collected data for various purposes, all aimed at making your cooking journey more enjoyable and effective:</p>
+                <ul class="list-disc list-inside ml-4 mb-4">
+                    <li>To provide and maintain our Service (e.g., displaying recipes, managing your account, ensuring website functionality). This includes hosting the website, maintaining databases, and ensuring all features are accessible and working correctly.</li>
+                    <li>To notify you about changes to our Service, such as new features, updates to our terms, or important announcements. We want to keep you in the loop!</li>
+                    <li>To allow you to participate in interactive features of our Service when you choose to do so (e.g., posting on the community wall, submitting recipe reviews, engaging in cooking challenges). Your participation helps build our vibrant community.</li>
+                    <li>To provide customer support and respond to your inquiries, feedback, or technical issues. We're here to help you every step of the way.</li>
+                    <li>To gather analysis or valuable information so that we can improve our Service, understand user behavior, and develop new features. This includes analyzing trends, tracking user navigation, and identifying popular content.</li>
+                    <li>To monitor the usage of our Service to detect and prevent fraudulent activity, ensure compliance with our terms, and maintain the integrity of our platform.</li>
+                    <li>To detect, prevent, and address technical issues, ensuring a smooth and uninterrupted experience for all users. This involves troubleshooting, bug fixing, and performance optimization.</li>
+                    <li>To provide you with news, special offers, and general information about other goods, services, and events which we offer that are similar to those that you have already purchased or enquired about, unless you have opted not to receive such information. This might include new recipe collections, seasonal meal plans, or exciting cooking tips delivered directly to your inbox.</li>
+                    <li>To personalize your experience and recommend recipes you might love based on your viewing history, saved favorites, or interactions with the site. We want to make sure you always find something delicious that suits your taste and skill level.</li>
+                    <li>To conduct research and analysis to better understand our audience and improve our content and services. This may involve aggregating anonymized data to identify patterns and preferences across our user base.</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">3. Sharing Your Information</h3>
+                <p class="mb-4">We value your trust and are careful about sharing your information. We may share your personal information in the following situations, always with your privacy in mind:</p>
+                <ul class="list-disc list-inside ml-4 mb-4">
+                    <li><strong>With Service Providers:</strong> We may employ third-party companies and individuals to facilitate our Service ("Service Providers"), to provide the Service on our behalf, to perform Service-related services, or to assist us in analyzing how our Service is used. These third parties may include web hosting providers, analytics services, email marketing platforms, and customer support tools. These Service Providers have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose. We ensure that all our service providers adhere to strict data protection standards.</li>
+                    <li><strong>For Business Transfers:</strong> If TastyCooksy is involved in a merger, acquisition, or asset sale, your Personal Data may be transferred as a business asset. We will provide prominent notice before your Personal Data is transferred and becomes subject to a different Privacy Policy, giving you the opportunity to object to such transfer if you wish.</li>
+                    <li><strong>For Legal Reasons:</strong> We may disclose your Personal Data in the good faith belief that such action is necessary to:
+                        <ul class="list-circle list-inside ml-8 mt-2">
+                            <li>Comply with a legal obligation, such as a court order, subpoena, or other governmental request.</li>
+                            <li>Protect and defend the rights or property of TastyCooksy, including enforcing our Terms of Service and other agreements.</li>
+                            <li>Prevent or investigate possible wrongdoing in connection with the Service, such as fraud or security breaches.</li>
+                            <li>Protect the personal safety of users of the Service or the public in urgent circumstances.</li>
+                            <li>Protect against legal liability, including responding to claims or legal processes.</li>
+                        </ul>
+                    </li>
+                    <li><strong>With Your Consent:</strong> We may disclose your personal information for any other purpose with your explicit consent. For example, if we run a promotion with a partner and you agree to share your information with them.</li>
+                    <li><strong>Community Wall and Public Areas:</strong> Please remember that any information you voluntarily disclose on our "Cooksy Community Wall," recipe comment sections, or other public areas of the site becomes public information. This includes your username, any photos you upload, and the content of your posts. You should exercise extreme caution and discretion when deciding to disclose personal information in these public areas, as we cannot control how other users may use or re-share this information.</li>
+                    <li><strong>Aggregated or Anonymized Data:</strong> We may share aggregated or anonymized information that does not directly identify you with third parties for various purposes, including marketing, analytics, or research. For example, we might share statistics about the most popular recipes or the demographics of our user base, but this data will not be linked to any individual's personal identity.</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">4. Security of Your Data</h3>
+                <p class="mb-4">The security of your data is paramount to us. We understand the importance of safeguarding your personal information and strive to use commercially acceptable means to protect your Personal Data against unauthorized access, alteration, disclosure, or destruction. We implement a variety of security measures, including encryption, firewalls, and secure server environments, to protect your data. Our team is regularly trained on data protection best practices. However, it's important to remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we endeavor to protect your Personal Data, we cannot guarantee its absolute security. We encourage you to also take steps to protect your personal information online, such as using strong, unique passwords and being cautious about sharing personal details.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">5. Your Data Protection Rights</h3>
+                <p class="mb-4">Depending on your location and applicable data protection laws (such as GDPR in Europe or CCPA in California), you may have certain data protection rights regarding your personal information. We are committed to helping you exercise these rights. We aim to take reasonable steps to allow you to correct, amend, delete, or limit the use of your Personal Data. If you wish to be informed what Personal Data we hold about you and if you want it to be removed from our systems, please contact us using the details provided at the end of this policy. We will respond to your request promptly and in accordance with applicable laws.</p>
+                <p class="mb-4">In certain circumstances, you have the following data protection rights:</p>
+                <ul class="list-disc list-inside ml-4 mb-4">
+                    <li><strong>The right to access, update or to delete the information we have on you.</strong> Whenever made possible, you can access, update or request deletion of your Personal Data directly within your account settings section on the website. This allows you to manage your profile information, saved recipes, and communication preferences. If you are unable to perform these actions yourself, or if you have questions about data not accessible through your account, please contact us to assist you. We will verify your identity before fulfilling any requests related to your personal data.</li>
+                    <li><strong>The right of rectification.</strong> You have the right to have your information rectified if that information is inaccurate or incomplete. If you notice any errors or omissions in your data, please let us know, and we will promptly correct it.</li>
+                    <li><strong>The right to object.</strong> You have the right to object to our processing of your Personal Data, particularly when we are processing it for direct marketing purposes or when our processing is based on legitimate interests.</li>
+                    <li><strong>The right of restriction.</strong> You have the right to request that we restrict the processing of your personal information under certain conditions, such as when you dispute the accuracy of the data or object to the processing.</li>
+                    <li><strong>The right to data portability.</strong> You have the right to be provided with a copy of the Personal Data we have on you in a structured, machine-readable and commonly used format. This allows you to transfer your data to another service provider if you wish.</li>
+                    <li><strong>The right to withdraw consent.</strong> You also have the right to withdraw your consent at any time where TastyCooksy relied on your consent to process your personal information. Withdrawing consent will not affect the lawfulness of any processing carried out before you withdraw your consent.</li>
+                    <li><strong>The right to lodge a complaint.</strong> You have the right to lodge a complaint with a data protection authority about our collection and use of your Personal Data. For more information, please contact your local data protection authority in the European Economic Area (EEA) or other relevant jurisdiction.</li>
+                </ul>
+                <p class="mb-4">We are committed to facilitating the exercise of these rights and ensuring your control over your personal data. Please note that we may ask you to verify your identity before responding to such requests to ensure the security and privacy of your information.</p>
+
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">6. Children's Privacy</h3>
+                <p class="mb-4">Our Service is not intended for, and does not knowingly collect personally identifiable information from, anyone under the age of 13 ("Children"). We are committed to protecting the privacy of young users. If you are a parent or guardian and you are aware that your Children have provided us with Personal Data without your verifiable consent, please contact us immediately. We will take prompt steps to investigate and remove that information from our servers and any associated databases. If we become aware that we have collected Personal Data from children under 13 without verification of parental consent, we will take all reasonable measures to remove that information from our servers. We encourage parents and guardians to monitor their children's online activities and to use parental control tools to help provide a child-friendly online environment.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">7. Links to Other Sites</h3>
+                <p class="mb-4">Our Service may contain links to other sites that are not operated by us. These third-party links are provided for your convenience and to offer additional resources. For example, a recipe might link to a specific ingredient supplier or a cooking tool review site. If you click on a third-party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit, as their practices may differ significantly from ours. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services. The inclusion of any link does not imply endorsement by TastyCooksy of the site or any association with its operators.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">8. Changes to This Privacy Policy</h3>
+                <p class="mb-4">We may update our Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. We will notify you of any significant changes by posting the new Privacy Policy on this page. We will also let you know via email and/or a prominent notice on our Service (e.g., a banner on the homepage), prior to the change becoming effective and update the "last updated" date at the top of this Privacy Policy. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page. Your continued use of the Service after the revised Privacy Policy has become effective indicates that you have read, understood, and agreed to the current version of the Privacy Policy.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">9. Contact Us</h3>
+                <p class="mb-4">If you have any questions about this Privacy Policy, our data practices, or if you wish to exercise any of your data protection rights, please don't hesitate to reach out to us. We're here to help!</p>
+                <ul class="list-disc list-inside ml-4 mb-4">
+                    <li>By email: <a href="mailto:privacy@tastycooksy.com" class="text-zesty-lemon-yellow hover:underline">privacy@tastycooksy.com</a> (This is our dedicated email for privacy-related inquiries.)</li>
+                    <li>By visiting this page on our website: <a href="contact.html" class="text-zesty-lemon-yellow hover:underline">TastyCooksy Contact Page</a> (Here you can find our general contact form and other ways to get in touch.)</li>
+                    <li>By mail: TastyCooksy Privacy Department, 123 Culinary Lane, Flavor Town, Kitchenland, KL 12345.</li>
+                </ul>
+
+                <p class="mt-8 text-center text-base">Last updated: July 5, 2025</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-slate-gray text-cloud-white py-10 rounded-t-3xl shadow-inner">
+        <div class="container flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div class="mb-6 md:mb-0">
+                <h3 class="text-2xl font-bold text-zesty-lemon-yellow mb-2">TastyCooksy</h3>
+                <p class="text-sm opacity-80">Fast. Fun. Foolproof. &copy; 2025</p>
+                <p class="text-sm opacity-80 mt-1">All rights reserved.</p>
+            </div>
+            <div class="mb-6 md:mb-0">
+                <h4 class="text-lg font-semibold text-fresh-mint-green mb-2">Contact Us</h4>
+                <p class="text-sm opacity-80">TastyCooksy Headquarters</p>
+                <p class="text-sm opacity-80">123 Culinary Lane, Flavor Town</p>
+                <p class="text-sm opacity-80">Kitchenland, KL 12345</p>
+                <p class="text-sm opacity-80">Email: <a href="mailto:hello@tastycooksy.com" class="text-zesty-lemon-yellow hover:underline">hello@tastycooksy.com</a></p>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold text-fresh-mint-green mb-2">Quick Links</h4>
+                <ul class="space-y-1">
+                    <li><a href="index.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Home</a></li>
+                    <li><a href="blog.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Blog</a></li>
+                    <li><a href="privacy.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Terms of Service</a></li>
+                    <li><a href="cookies.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Cookie Policy</a></li>
+                    <li><a href="contact.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

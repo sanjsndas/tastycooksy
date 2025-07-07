@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TastyCooksy — Fast. Fun. Foolproof.</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FAFAFA; /* Cloud White */
+            color: #455A64; /* Slate Gray for text */
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        /* Custom Tailwind Configuration for colors and font */
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        @layer base {
+            :root {
+                --color-zesty-lemon-yellow: #FFEB3B;
+                --color-bold-berry-red: #E53935;
+                --color-cloud-white: #FAFAFA;
+                --color-fresh-mint-green: #66BB6A;
+                --color-slate-gray: #455A64;
+            }
+        }
+
+        .bg-zesty-lemon-yellow { background-color: var(--color-zesty-lemon-yellow); }
+        .text-zesty-lemon-yellow { color: var(--color-zesty-lemon-yellow); }
+        .bg-bold-berry-red { background-color: var(--color-bold-berry-red); }
+        .text-bold-berry-red { color: var(--color-bold-berry-red); }
+        .bg-cloud-white { background-color: var(--color-cloud-white); }
+        .text-cloud-white { color: var(--color-cloud-white); }
+        .bg-fresh-mint-green { background-color: var(--color-fresh-mint-green); }
+        .text-fresh-mint-green { color: var(--color-fresh-mint-green); }
+        .bg-slate-gray { background-color: var(--color-slate-gray); }
+        .text-slate-gray { color: var(black); }
+
+        /* Specific styles for navigation links */
+        nav a {
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            color: #E53935; /* Bold Berry Red on hover */
+            transform: translateY(-2px);
+        }
+        .btn-primary {
+            background-color: #FFEB3B; /* Zesty Lemon Yellow */
+            color: #455A64; /* Slate Gray */
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px; /* Fully rounded */
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary:hover {
+            background-color: #FFD600; /* Slightly darker yellow */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        .btn-secondary {
+            background-color: #66BB6A; /* Fresh Mint Green */
+            color: #000000; /* Cloud White */
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-secondary:hover {
+            background-color: #5CB85C; /* Slightly darker green */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        .card {
+            background-color: #FFFFFF; /* Pure White for cards */
+            border-radius: 1rem; /* Rounded corners */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+        .section-heading {
+            color: #E53935; /* Bold Berry Red */
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #E53935, #FFEB3B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="font-inter bg-cloud-white text-slate-gray">
+
+    <!-- Header Section -->
+    <header class="bg-cloud-white shadow-md py-4">
+        <div class="container flex flex-col md:flex-row justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center mb-4 md:mb-0">
+                <img src="https://placehold.co/60x60/FFEB3B/455A64?text=TC" alt="TastyCooksy Logo" class="rounded-full mr-3 shadow-md">
+                <h1 class="text-3xl font-bold text-bold-berry-red">TastyCooksy</h1>
+            </div>
+            <!-- Navigation -->
+            <nav>
+                <ul class="flex flex-wrap justify-center md:justify-end space-x-4 md:space-x-8 text-lg font-medium">
+                    <li><a href="index.html" class="text-slate-gray hover:text-bold-berry-red rounded-md px-3 py-2">Home</a></li>
+                    <li><a href="blog.html" class="text-slate-gray hover:text-bold-berry-red rounded-md px-3 py-2">Blog</a></li>
+                    <li><a href="privacy.html" class="text-slate-gray hover:text-bold-berry-red rounded-md px-3 py-2">Privacy</a></li>
+                    <li><a href="terms.html" class="text-slate-gray hover:text-bold-berry-red rounded-md px-3 py-2">Terms</a></li>
+                    <li><a href="cookies.html" class="text-slate-gray hover:text-bold-berry-red rounded-md px-3 py-2">Cookies</a></li>
+                    <li><a href="contact.html" class="text-slate-gray hover:text-bold-berry-red rounded-md px-3 py-2">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-bold-berry-red to-zesty-lemon-yellow text-black py-20 md:py-32 overflow-hidden rounded-b-3xl shadow-xl">
+        <div class="container flex flex-col md:flex-row items-center justify-between text-center md:text-left relative z-10">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h2 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6 animate-pulse">
+                    Fast. Fun. Foolproof.
+                </h2>
+                <p class="text-xl md:text-2xl mb-8 opacity-90">
+                    Quick Wins in the Kitchen. Tasty Made Easy.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#quick-recipes" class="btn-primary inline-block text-lg font-semibold shadow-lg hover:shadow-xl">See 15-Minute Recipes</a>
+                    <a href="#newbie-kitchen" class="btn-secondary inline-block text-lg font-semibold shadow-lg hover:shadow-xl">Newbie Cooking Guides</a>
+                    <a href="#video-hub" class="btn-primary inline-block text-lg font-semibold shadow-lg hover:shadow-xl">Video Recipes</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center md:justify-end">
+                <img src="p1.avif" alt="Hero Image: Quick-prep meals" class="rounded-xl shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
+            </div>
+        </div>
+        <!-- Decorative shapes -->
+        <div class="absolute top-0 left-0 w-40 h-40 bg-cloud-white opacity-10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-60 h-60 bg-cloud-white opacity-10 rounded-full translate-x-1/2 translate-y-1/2"></div>
+    </section>
+
+    <main class="container py-16">
+
+        <!-- Quick Recipe Library Section -->
+        <section id="quick-recipes" class="mb-16">
+            <h2 class="section-heading text-gradient">Quick Recipe Library</h2>
+            <p class="text-center text-lg mb-10 max-w-3xl mx-auto">Dive into our treasure trove of recipes designed for speed, simplicity, and incredible flavor. Whether you're a student on a budget, a busy parent, or just looking for a fuss-free dinner, we've got you covered. Our recipes prioritize minimal ingredients and maximum taste, ensuring every meal is a win.</p>
+
+            <!-- 15-Minute Meals -->
+            <div class="mb-12 card p-8">
+                <h3 class="text-3xl font-bold text-fresh-mint-green mb-6">⏰ 15-Minute Meals: Speed Cooking for Busy Lives</h3>
+                <p class="text-lg mb-6">Life moves fast, and so should your dinner! Our 15-minute meal collection is packed with lightning-fast recipes that don't compromise on flavor. Perfect for those evenings when you're short on time but still crave something homemade and delicious. These recipes are designed to get you from zero to hero in the kitchen in a flash, utilizing smart shortcuts and readily available ingredients.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card p-6 flex flex-col items-center text-center">
+                        <img src="p2.webp" alt="Lemon Herb Pasta" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Zesty Lemon Herb Pasta</h4>
+                        <p class="text-sm text-slate-gray-600 mb-4">A vibrant and light pasta dish, ready in minutes. Perfect for a quick weeknight dinner.</p>
+                        <ul class="list-disc list-inside text-left text-sm mb-4">
+                            <li><strong>Ingredients:</strong> Pasta, lemon, fresh herbs (parsley, basil), garlic, olive oil, parmesan.</li>
+                            <li><strong>Instructions:</strong> Boil pasta. Sauté garlic in olive oil, add lemon zest and juice, chopped herbs. Toss with cooked pasta and parmesan.</li>
+                        </ul>
+                        <p class="text-xs text-slate-gray-500">This recipe is a lifesaver for those hectic evenings. The bright flavors of lemon and fresh herbs elevate simple pasta into a gourmet-like experience without the fuss. It's incredibly versatile too; feel free to add some cherry tomatoes or a handful of spinach for extra veggies. The key is to have your ingredients prepped and ready to go, making the cooking process truly seamless and enjoyable. You'll be amazed at how much flavor you can pack into such a short amount of time, proving that delicious meals don't always require hours in the kitchen.</p>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center text-center">
+                        <img src="p3.webp" alt="Speedy Black Bean Quesadillas" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Speedy Black Bean Quesadillas</h4>
+                        <p class="text-sm text-slate-gray-600 mb-4">Crispy, cheesy, and packed with flavor. A family favorite that's incredibly fast.</p>
+                        <ul class="list-disc list-inside text-left text-sm mb-4">
+                            <li><strong>Ingredients:</strong> Tortillas, canned black beans, shredded cheese, salsa, sour cream (optional).</li>
+                            <li><strong>Instructions:</strong> Mash black beans with a fork. Spread on half a tortilla, top with cheese. Fold, cook in a hot pan until golden and cheese is melted. Serve with salsa.</li>
+                        </ul>
+                        <p class="text-xs text-slate-gray-500">Quesadillas are the ultimate quick comfort food. This version, with hearty black beans, offers a good source of protein and fiber, making it a more substantial meal. The beauty of this recipe lies in its adaptability; add corn, bell peppers, or even some cooked chicken if you have it on hand. The secret to a perfect quesadilla is a hot pan and not overcrowding it, ensuring that crispy, golden exterior every time. It’s a fantastic option for a quick lunch or a light dinner, and kids absolutely love them, especially when they can customize their own fillings. It's a testament to how simple ingredients can create truly satisfying results.</p>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center text-center">
+                        <img src="p4.webp" alt="Quick Tuna Melt Toast" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Quick Tuna Melt Toast</h4>
+                        <p class="text-sm text-slate-gray-600 mb-4">A classic comfort food, reimagined for ultimate speed and deliciousness.</p>
+                        <ul class="list-disc list-inside text-left text-sm mb-4">
+                            <li><strong>Ingredients:</strong> Canned tuna, mayonnaise, celery (finely diced), bread, cheese slices.</li>
+                            <li><strong>Instructions:</strong> Mix tuna, mayo, and celery. Toast bread. Top toast with tuna mix and cheese. Broil until cheese is bubbly.</li>
+                        </ul>
+                        <p class="text-xs text-slate-gray-500">The tuna melt is a timeless classic, and this quick version brings it to your table faster than ever. It's a fantastic way to utilize pantry staples and create a filling, savory meal. For a healthier twist, consider using Greek yogurt instead of mayonnaise, or adding some finely chopped bell peppers for extra crunch and vitamins. The broiling step is crucial for that perfectly melted, slightly browned cheese top that makes a tuna melt so irresistible. This dish is not just about speed; it's about delivering a comforting, satisfying experience that reminds you of home-cooked goodness, even when you're in a rush. It’s a versatile base that can be customized to your liking, making it a recurring favorite.</p>
+                    </div>
+                </div>
+                <p class="text-center text-md mt-8">Explore more 15-minute wonders and reclaim your evenings! From speedy stir-fries to instant noodle upgrades, our collection is constantly growing to bring you the fastest, most flavorful solutions for your busy schedule. We believe that quick meals should never mean sacrificing taste or nutrition. Each recipe is tested for maximum efficiency and deliciousness, ensuring you spend less time cooking and more time enjoying your life. Get ready to transform your weeknights with these incredible, time-saving dishes!</p>
+            </div>
+
+            <!-- 5-Ingredient Wonders -->
+            <div class="mb-12 card p-8">
+                <h3 class="text-3xl font-bold text-bold-berry-red mb-6">✨ 5-Ingredient Wonders: Simplicity at Its Best</h3>
+                <p class="text-lg mb-6">Who knew so much flavor could come from so few ingredients? Our 5-ingredient wonders prove that gourmet-level taste doesn't require a lengthy shopping list. These recipes are perfect for beginners, budget-conscious cooks, or anyone looking to minimize their grocery trips and kitchen clutter. Less is truly more when it comes to these culinary masterpieces.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card p-6 flex flex-col items-center text-center">
+                        <img src="p5.webp" alt="Sheet Pan Lemon Herb Chicken" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Sheet Pan Lemon Herb Chicken</h4>
+                        <p class="text-sm text-slate-gray-600 mb-4">Effortless and flavorful chicken and veggies, all on one pan.</p>
+                        <ul class="list-disc list-inside text-left text-sm mb-4">
+                            <li><strong>Ingredients:</strong> Chicken thighs, potatoes, lemon, dried herbs, olive oil.</li>
+                            <li><strong>Instructions:</strong> Toss chicken and chopped potatoes with olive oil, lemon slices, and herbs. Roast on a sheet pan until cooked through.</li>
+                        </ul>
+                        <p class="text-xs text-slate-gray-500">The sheet pan meal is a weeknight warrior, and this lemon herb chicken version is a shining example. It's incredibly easy to prepare, with minimal cleanup, making it a dream for busy individuals. The magic happens in the oven, where the chicken becomes tender and juicy, and the potatoes crisp up beautifully, absorbing all the aromatic flavors. This recipe is also highly adaptable; feel free to swap out potatoes for sweet potatoes, carrots, or broccoli. The dried herbs provide a robust flavor profile, but fresh herbs can be used if available for an even brighter taste. It’s a complete meal in one go, offering balanced nutrition and a satisfying experience with very little effort.</p>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center text-center">
+                        <img src="p6.webp" alt="Creamy Tomato Soup" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Creamy Tomato Soup</h4>
+                        <p class="text-sm text-slate-gray-600 mb-4">A comforting, rich soup that tastes like it took hours, but only needs five ingredients.</p>
+                        <ul class="list-disc list-inside text-left text-sm mb-4">
+                            <li><strong>Ingredients:</strong> Canned crushed tomatoes, vegetable broth, heavy cream, garlic powder, dried basil.</li>
+                            <li><strong>Instructions:</strong> Combine tomatoes, broth, garlic powder, and basil in a pot. Simmer. Stir in cream. Blend until smooth if desired.</li>
+                        </ul>
+                        <p class="text-xs text-slate-gray-500">This creamy tomato soup is the epitome of comfort in a bowl, proving that simple ingredients can yield profound flavors. The combination of crushed tomatoes and vegetable broth forms a robust base, while the heavy cream adds a luxurious richness that makes this soup incredibly satisfying. Garlic powder and dried basil are your secret weapons here, infusing the soup with classic Italian-inspired aromas. Serve it with a grilled cheese sandwich for the ultimate nostalgic meal. This recipe is perfect for a cozy night in or a quick, warming lunch. It's also a great base for customization; add a pinch of red pepper flakes for a kick or some croutons for texture. Enjoy the simplicity and the incredible taste!</p>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center text-center">
+                        <img src="p7.webp" alt="Easy Peanut Noodles" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Easy Peanut Noodles</h4>
+                        <p class="text-sm text-slate-gray-600 mb-4">A sweet and savory Asian-inspired dish that's surprisingly easy.</p>
+                        <ul class="list-disc list-inside text-left text-sm mb-4">
+                            <li><strong>Ingredients:</strong> Spaghetti or linguine, peanut butter, soy sauce, honey/maple syrup, rice vinegar.</li>
+                            <li><strong>Instructions:</strong> Cook pasta. Whisk together peanut butter, soy sauce, honey, and rice vinegar with a splash of hot pasta water to create a sauce. Toss with cooked pasta.</li>
+                        </ul>
+                        <p class="text-xs text-slate-gray-500">These easy peanut noodles are a revelation for anyone craving takeout flavors without the fuss. The sauce, made from just four core ingredients, comes together in seconds and coats the noodles beautifully, creating a harmonious blend of sweet, savory, and tangy notes. It's a fantastic vegetarian option, but you can easily add cooked chicken, tofu, or shrimp for extra protein. Garnish with chopped peanuts or green onions if you have them for added texture and freshness. This dish is incredibly versatile and can be served warm or cold, making it perfect for meal prep or a quick grab-and-go lunch. It’s a testament to how simple pantry staples can be transformed into an exciting and satisfying meal.</p>
+                    </div>
+                </div>
+                <p class="text-center text-md mt-8">Discover the magic of minimalist cooking with our 5-ingredient wonders. These recipes are designed to prove that you don't need a pantry full of exotic spices or complex techniques to create truly delicious and satisfying meals. Each dish is a testament to the power of simplicity, focusing on core flavors that shine through. Perfect for beginners and seasoned cooks alike, these recipes will streamline your grocery list, reduce food waste, and make cooking an absolute breeze. Get ready to be amazed by how much you can achieve with so little!</p>
+            </div>
+
+            <!-- One-Pot Recipes -->
+            <div class="mb-12 card p-8">
+                <h3 class="text-3xl font-bold text-fresh-mint-green mb-6">🍳 One-Pot Recipes: Minimal Mess, Maximum Flavor</h3>
+                <p class="text-lg mb-6">Hate doing dishes? So do we! Our one-pot recipes are your ultimate solution for delicious meals with virtually no cleanup. Everything cooks together in a single pot, pan, or baking dish, infusing every ingredient with rich, cohesive flavors. These are perfect for busy weeknights, camping trips, or simply when you want to enjoy a fantastic meal without the aftermath.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card p-6 flex flex-col items-center text-center">
+                        <img src="p8.webp" alt="One-Pot Sausage & Peppers Pasta" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">One-Pot Sausage & Peppers Pasta</h4>
+                        <p class="text-sm text-slate-gray-600 mb-4">A hearty, flavorful pasta dish that cooks entirely in one pot.</p>
+                        <ul class="list-disc list-inside text-left text-sm mb-4">
+                            <li><strong>Ingredients:</strong> Italian sausage, bell peppers, onion, canned crushed tomatoes, pasta (penne or rotini), chicken broth.</li>
+                            <li><strong>Instructions:</strong> Brown sausage. Add peppers and onion, cook until softened. Stir in tomatoes, broth, and uncooked pasta. Simmer until pasta is tender.</li>
+                        </ul>
+                        <p class="text-xs text-slate-gray-500">This one-pot sausage and peppers pasta is a complete meal that delivers big on flavor with minimal effort. The sausage browns beautifully, releasing its savory fats to cook the vegetables, creating a rich base. As the pasta cooks directly in the sauce, it absorbs all those wonderful flavors, resulting in a deeply satisfying dish. It’s a fantastic option for a comforting family dinner, and the leftovers are just as delicious. Feel free to use spicy or mild sausage based on your preference, and add a sprinkle of fresh parsley or parmesan cheese before serving for an extra touch of freshness and richness. This recipe truly embodies the spirit of easy, delicious, and low-cleanup cooking.</p>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center text-center">
+                        <img src="p9.webp" alt="Creamy One-Pot Chicken & Rice" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Creamy One-Pot Chicken & Rice</h4>
+                        <p class="text-sm text-slate-gray-600 mb-4">A comforting, creamy dish with tender chicken and perfectly cooked rice.</p>
+                        <ul class="list-disc list-inside text-left text-sm mb-4">
+                            <li><strong>Ingredients:</strong> Chicken breast/thighs, rice, chicken broth, cream of mushroom soup, frozen peas.</li>
+                            <li><strong>Instructions:</strong> Brown chicken. Add rice, broth, and soup. Simmer until rice is cooked and liquid is absorbed. Stir in peas.</li>
+                        </ul>
+                        <p class="text-xs text-slate-gray-500">This creamy one-pot chicken and rice is the ultimate comfort food, perfect for a chilly evening or when you need a hearty, satisfying meal. The beauty of this dish is how all the flavors meld together as it simmers, resulting in incredibly tender chicken and perfectly cooked, creamy rice. The cream of mushroom soup acts as a fantastic shortcut, providing a rich, savory base without needing to make a roux from scratch. Adding frozen peas at the end ensures they remain vibrant and slightly crisp. This dish is a complete meal on its own, but a simple side salad would complement it beautifully. It’s a foolproof recipe that consistently delivers delicious results with minimal fuss.</p>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center text-center">
+                        <img src="p10.webp" alt="Hearty One-Pot Veggie Chili" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md">
+                        <h4 class="text-xl font-semibold mb-2">Hearty One-Pot Veggie Chili</h4>
+                        <p class="text-sm text-slate-gray-600 mb-4">A robust and flavorful vegetarian chili, cooked entirely in one pot.</p>
+                        <ul class="list-disc list-inside text-left text-sm mb-4">
+                            <li><strong>Ingredients:</strong> Canned diced tomatoes, kidney beans, black beans, corn, onion, bell pepper, chili powder, vegetable broth.</li>
+                            <li><strong>Instructions:</strong> Sauté onion and bell pepper. Add tomatoes, beans, corn, chili powder, and broth. Simmer until flavors meld.</li>
+                        </ul>
+                        <p class="text-xs text-slate-gray-500">This one-pot veggie chili is a vibrant and incredibly satisfying meal, perfect for a cozy night in. It’s packed with plant-based protein and fiber, making it a healthy and hearty option for vegetarians and meat-eaters alike. The combination of different beans, sweet corn, and aromatic vegetables creates a complex flavor profile that deepens as it simmers. Chili powder is the star spice here, but feel free to add a pinch of cumin or smoked paprika for extra depth. Serve with your favorite toppings like shredded cheese, sour cream, avocado, or fresh cilantro. This chili is even better the next day, making it an excellent choice for meal prepping. Enjoy the warmth and incredible flavors of this simple, yet robust, one-pot wonder.</p>
+                    </div>
+                </div>
+                <p class="text-center text-md mt-8">Say goodbye to stacks of dirty dishes! Our one-pot recipes are your ticket to stress-free cooking and effortless cleanup. These dishes are designed for maximum flavor infusion, as all ingredients cook together, allowing their essences to meld beautifully. From hearty stews to comforting pasta dishes, you'll find a wide variety of options that are perfect for any occasion. Simplify your kitchen routine and spend less time scrubbing and more time savoring your delicious, homemade meals. It's time to embrace the convenience and culinary brilliance of one-pot wonders!</p>
+            </div>
+
+            <!-- Snack Hacks & Sweet Treats -->
+            <div class="mb-12 card p-8">
+                <h3 class="text-3xl font-bold text-bold-berry-red mb-6">🍭 Snack Hacks & Sweet Treats: Quick Bites, Big Smiles</h3>
+                <p class="text-lg mb-6">Got a craving? Our snack hacks and sweet treats are here to save the day! These quick and easy recipes are perfect for satisfying those sudden hunger pangs or whipping up a delightful dessert without spending hours in the kitchen. From healthy bites to indulgent delights, we've got something for every mood and every sweet tooth. Get ready to impress yourself with how effortlessly you can create delicious treats!</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card p-6 flex flex-col items-center text-center">
+                        <h4 class="text-xl font-semibold mb-2">No-Bake Energy Bites</h4>
+                        <p class="text-sm text-slate-gray-600 mb-4">Healthy, delicious, and perfect for a quick energy boost. No oven required!</p>
+                        <ul class="list-disc list-inside text-left text-sm mb-4">
+                            <li><strong>Ingredients:</strong> Rolled oats, peanut butter, honey/maple syrup, chocolate chips, chia seeds.</li>
+                            <li><strong>Instructions:</strong> Mix all ingredients. Roll into small balls. Chill for 30 minutes.</li>
+                        </ul>
+                        <p class="text-xs text-slate-gray-500">These no-bake energy bites are a fantastic solution for healthy snacking on the go. They're packed with fiber from oats, protein from peanut butter, and healthy fats from chia seeds, providing sustained energy without a sugar crash. The beauty of these bites is their versatility; feel free to add shredded coconut, flax seeds, or dried fruit to customize them to your liking. They're also incredibly easy to make, requiring no cooking whatsoever, which makes them perfect for kids to help with. Store them in the fridge for a quick grab-and-go snack throughout the week. They're a delicious and nutritious way to fuel your day, proving that healthy can also be incredibly tasty and convenient.</p>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center text-center">
+                        <h4 class="text-xl font-semibold mb-2">Microwave Mug Brownie</h4>
+                        <p class="text-sm text-slate-gray-600 mb-4">Indulge in a warm, fudgy brownie in under 5 minutes, perfect for one.</p>
+                        <ul class="list-disc list-inside text-left text-sm mb-4">
+                            <li><strong>Ingredients:</strong> Flour, sugar, cocoa powder, oil, milk, chocolate chips.</li>
+                            <li><strong>Instructions:</strong> Mix dry ingredients in a mug. Stir in wet ingredients. Microwave for 60-90 seconds.</li>
+                        </ul>
+                        <p class="text-xs text-slate-gray-500">When a chocolate craving hits, this microwave mug brownie is your ultimate savior. It's incredibly fast, requires minimal cleanup, and delivers a warm, fudgy, and intensely chocolatey dessert in just minutes. The key is not to overcook it, as a slightly undercooked brownie will be wonderfully gooey. Feel free to add a scoop of ice cream, a dollop of whipped cream, or a sprinkle of sea salt on top for an extra touch of decadence. This recipe is perfect for a single serving, preventing you from devouring an entire batch of brownies (unless you make multiple mugs!). It’s a delightful little treat that proves instant gratification can be incredibly delicious.</p>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center text-center">
+                        <h4 class="text-xl font-semibold mb-2">Quick Fruit & Yogurt Parfait</h4>
+                        <p class="text-sm text-slate-gray-600 mb-4">A refreshing and healthy layered snack or light breakfast.</p>
+                        <ul class="list-disc list-inside text-left text-sm mb-4">
+                            <li><strong>Ingredients:</strong> Greek yogurt, mixed berries, granola, honey/maple syrup.</li>
+                            <li><strong>Instructions:</strong> Layer yogurt, berries, and granola in a glass. Drizzle with honey.</li>
+                        </ul>
+                        <p class="text-xs text-slate-gray-500">This quick fruit and yogurt parfait is a fantastic option for a healthy and satisfying snack or a light breakfast. It's incredibly customizable; use your favorite fruits, whether fresh or frozen, and experiment with different types of granola for varying textures and flavors. Greek yogurt provides a good source of protein, keeping you full and energized. The layers not only look beautiful but also ensure you get a delightful mix of flavors and textures in every spoonful. It's a perfect grab-and-go option for busy mornings or a refreshing treat on a warm afternoon. This simple assembly proves that healthy eating can be both delicious and incredibly easy.</p>
+                    </div>
+                </div>
+                <p class="text-center text-md mt-8">Unleash your inner snack master with our collection of quick bites and sweet treats! Whether you're looking for a healthy pick-me-up or a decadent dessert, our recipes are designed to be fast, fun, and incredibly satisfying. From crunchy energy bites to gooey mug cakes, you'll find inspiration for every craving. These recipes are perfect for busy schedules, impromptu gatherings, or just treating yourself after a long day. Get ready to transform your snack game and delight your taste buds with minimal effort and maximum enjoyment!</p>
+            </div>
+
+            <!-- Budget-Friendly Student Meals -->
+            <div class="mb-12 card p-8">
+                <h3 class="text-3xl font-bold text-fresh-mint-green mb-6">💰 Budget-Friendly Student Meals: Eat Well, Spend Less</h3>
+                <p class="text-lg mb-6">Student life is tough, but your meals don't have to be! Our collection of budget-friendly student meals is designed to help you eat delicious, nutritious food without breaking the bank. These recipes focus on affordable ingredients, clever hacks, and maximizing leftovers, ensuring you get the most bang for your buck. Say goodbye to instant ramen and hello to tasty, wallet-friendly cooking!</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card p-6 flex flex-col items-center text-center">
+                        <h4 class="text-xl font-semibold mb-2">Hearty Lentil Soup</h4>
+                        <p class="text-sm text-slate-gray-600 mb-4">A filling, nutritious, and incredibly cheap soup that makes great leftovers.</p>
+                        <ul class="list-disc list-inside text-left text-sm mb-4">
+                            <li><strong>Ingredients:</strong> Dried lentils, carrots, celery, onion, canned diced tomatoes, vegetable broth, spices.</li>
+                            <li><strong>Instructions:</strong> Sauté veggies. Add lentils, tomatoes, broth, and spices. Simmer until lentils are tender.</li>
+                        </ul>
+                        <p class="text-xs text-slate-gray-500">Lentil soup is a powerhouse of nutrition and an absolute champion for budget-conscious cooks. Dried lentils are incredibly affordable and packed with plant-based protein and fiber, making this soup incredibly filling and satisfying. The combination of carrots, celery, and onion forms a classic mirepoix base, infusing the soup with a savory depth. This soup tastes even better the next day, making it perfect for meal prepping a week's worth of lunches or dinners. It's a versatile recipe; add some spinach at the end for extra greens or a squeeze of lemon juice for brightness. This soup proves that eating well on a budget is not only possible but can also be incredibly delicious and comforting.</p>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center text-center">
+                        <h4 class="text-xl font-semibold mb-2">Student Egg Fried Rice</h4>
+                        <p class="text-sm text-slate-gray-600 mb-4">Transform leftover rice into a quick, flavorful, and cheap meal.</p>
+                        <ul class="list-disc list-inside text-left text-sm mb-4">
+                            <li><strong>Ingredients:</strong> Day-old cooked rice, eggs, soy sauce, frozen mixed vegetables, oil.</li>
+                            <li><strong>Instructions:</strong> Scramble eggs. Sauté veggies. Add rice and soy sauce. Stir-fry until heated through. Combine with eggs.</li>
+                        </ul>
+                        <p class="text-xs text-slate-gray-500">Egg fried rice is the ultimate student staple, transforming humble leftover rice into a delicious and satisfying meal. The key to good fried rice is using day-old, chilled rice, which prevents it from becoming mushy. This recipe is incredibly versatile; feel free to add any leftover cooked protein (chicken, tofu) or extra vegetables you have on hand. The soy sauce provides that classic umami flavor, and a dash of sesame oil at the end can elevate it further. It's a quick, one-pan wonder that's perfect for a speedy lunch or dinner, proving that creative cooking with simple ingredients can lead to incredibly tasty and budget-friendly results. Say goodbye to boring meals and hello to flavorful fried rice!</p>
+                    </div>
+                    <div class="card p-6 flex flex-col items-center text-center">
+                        <h4 class="text-xl font-semibold mb-2">Pasta Aglio e Olio (Garlic & Oil)</h4>
+                        <p class="text-sm text-slate-gray-600 mb-4">A classic Italian dish that's incredibly simple, cheap, and delicious.</p>
+                        <ul class="list-disc list-inside text-left text-sm mb-4">
+                            <li><strong>Ingredients:</strong> Spaghetti, garlic, olive oil, red pepper flakes, parsley (optional).</li>
+                            <li><strong>Instructions:</strong> Cook spaghetti. Sauté sliced garlic and red pepper flakes in olive oil. Toss with cooked spaghetti and a splash of pasta water.</li>
+                        </ul>
+                        <p class="text-xs text-slate-gray-500">Pasta Aglio e Olio is a testament to the power of simple, high-quality ingredients. This classic Italian dish is incredibly flavorful, yet it relies on just a few pantry staples, making it perfect for budget-conscious cooks. The key is to gently toast the garlic in olive oil, infusing the oil with its aromatic essence without burning it. A pinch of red pepper flakes adds a subtle warmth, and a splash of starchy pasta water helps create a silky, emulsified sauce that clings beautifully to the spaghetti. Finish with fresh parsley if you have it for a burst of freshness. This dish proves that sophisticated flavors don't require complex recipes or expensive ingredients. It's a truly satisfying and effortlessly elegant meal.</p>
+                    </div>
+                </div>
+                <p class="text-center text-md mt-8">Navigate student life with ease and flavor! Our budget-friendly meal ideas are crafted to help you eat well, stay energized, and save money. From hearty soups that stretch for days to creative ways to use common pantry items, you'll find recipes that fit your lifestyle and your wallet. We understand the challenges of cooking on a student budget, and our goal is to provide you with delicious, practical solutions that make healthy eating accessible and enjoyable. Say goodbye to food stress and hello to smart, satisfying student meals!</p>
+            </div>
+        </section>
+
+        <!-- TastyCooksy Video Hub Section -->
+        <section id="video-hub" class="mb-16 card p-8 bg-fresh-mint-green text-black">
+            <h2 class="section-heading text-cloud-white">🎥 TastyCooksy Video Hub</h2>
+            <p class="text-center text-lg mb-10 max-w-3xl mx-auto">Welcome to the future of cooking! Our Video Hub is your visual guide to quick, delicious meals. Inspired by the fast-paced, engaging style of Reels and TikTok, our short videos provide play-by-play instructions, looping GIFs for key steps, and all the visual cues you need to cook with confidence. See it, make it, love it!</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-6 bg-cloud-white text-slate-gray flex flex-col items-center text-center">
+                    <h4 class="text-xl font-semibold mb-2">One-Pan Lemon Garlic Shrimp</h4>
+                    <p class="text-sm text-slate-gray-600 mb-4">Watch how quickly this vibrant, flavorful shrimp dish comes together. Perfect for a light dinner!</p>
+                    <a href="#" class="btn-primary text-sm">Watch Now</a>
+                </div>
+                <div class="card p-6 bg-cloud-white text-slate-gray flex flex-col items-center text-center">
+                    <h4 class="text-xl font-semibold mb-2">Avocado Toast Masterclass</h4>
+                    <p class="text-sm text-slate-gray-600 mb-4">Elevate your avocado toast game with these simple, visual hacks.</p>
+                    <a href="#" class="btn-primary text-sm">Watch Now</a>
+                </div>
+                <div class="card p-6 bg-cloud-white text-slate-gray flex flex-col items-center text-center">
+                    <h4 class="text-xl font-semibold mb-2">3-Ingredient Peanut Butter Cookies</h4>
+                    <p class="text-sm text-slate-gray-600 mb-4">Sweet tooth calling? These cookies are ridiculously easy and quick to bake!</p>
+                    <a href="#" class="btn-primary text-sm">Watch Now</a>
+                </div>
+            </div>
+            <p class="text-center text-md mt-8">Our video hub is constantly updated with new, exciting recipes and cooking tips, all presented in an easy-to-digest, visual format. We believe that seeing is learning, especially when it comes to cooking. From mastering basic techniques to discovering new flavor combinations, our videos make every step clear and enjoyable. Get ready to cook along with us and transform your kitchen into a place of fun and culinary success!</p>
+        </section>
+
+        <!-- Newbie Kitchen 101 Section -->
+        <section id="newbie-kitchen" class="mb-16">
+            <h2 class="section-heading text-gradient">🎓 Newbie Kitchen 101: Your Culinary Crash Course</h2>
+            <p class="text-center text-lg mb-10 max-w-3xl mx-auto">Every chef starts somewhere! Our Newbie Kitchen 101 section is your ultimate guide to mastering the fundamentals of cooking. We break down essential skills, demystify pantry staples, and offer fun challenges to build your confidence. No jargon, just clear, actionable advice to get you cooking like a pro in no time.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-6 flex flex-col items-center text-center">
+                    <h4 class="text-xl font-semibold mb-2">Mastering Knife Skills</h4>
+                    <p class="text-sm text-slate-gray-600 mb-4">Learn safe and efficient chopping techniques. A must-know for every cook!</p>
+                    <ul class="list-disc list-inside text-left text-sm mb-4">
+                        <li><strong>Holding the Knife:</strong> Proper grip for control and safety.</li>
+                        <li><strong>The Claw Method:</strong> Protecting your fingers while chopping.</li>
+                        <li><strong>Basic Cuts:</strong> Dicing onions, mincing garlic, slicing carrots.</li>
+                        <li><strong>Practice Exercises:</strong> Simple drills to build confidence.</li>
+                    </ul>
+                    <p class="text-xs text-slate-gray-500">Mastering knife skills is arguably the most foundational skill in cooking. It not only makes your cooking process faster and more enjoyable but also significantly enhances safety in the kitchen. Our guide breaks down complex techniques into easy-to-follow steps, starting with how to hold your knife correctly for maximum control and leverage. We then introduce the "claw method," a crucial technique for keeping your fingertips safe while chopping. You'll learn how to dice an onion evenly, mince garlic finely, and slice vegetables consistently, which is key for even cooking. We also provide simple practice exercises using soft vegetables like cucumbers or zucchini to help you build muscle memory and confidence. Remember, practice makes perfect, and with a little patience, you'll be chopping like a pro in no time, making your meal prep a breeze.</p>
+                </div>
+                <div class="card p-6 flex flex-col items-center text-center">
+                    <h4 class="text-xl font-semibold mb-2">Pantry Essentials for Quick Meals</h4>
+                    <p class="text-sm text-slate-gray-600 mb-4">Stock your kitchen with the basics to whip up meals anytime.</p>
+                    <ul class="list-disc list-inside text-left text-sm mb-4">
+                        <li><strong>Grains:</strong> Rice, pasta, oats.</li>
+                        <li><strong>Canned Goods:</strong> Tomatoes, beans, broth.</li>
+                        <li><strong>Spices:</strong> Salt, pepper, garlic powder, onion powder, dried herbs.</li>
+                        <li><strong>Oils & Vinegars:</strong> Olive oil, vegetable oil, apple cider vinegar.</li>
+                        <li><strong>Long-lasting Produce:</strong> Onions, garlic, potatoes.</li>
+                    </ul>
+                    <p class="text-xs text-slate-gray-500">A well-stocked pantry is the secret weapon of any efficient cook, especially when it comes to whipping up quick meals. Our guide to pantry essentials focuses on versatile, long-lasting ingredients that can be combined in countless ways to create delicious dishes without frequent grocery runs. We cover fundamental grains like rice and pasta, which form the base of many meals, and essential canned goods such as tomatoes and beans for quick sauces and protein boosts. A selection of basic spices is crucial for adding flavor, while versatile oils and vinegars are indispensable for cooking and dressings. Finally, we highlight long-lasting produce like onions, garlic, and potatoes, which are the building blocks of countless savory dishes. By keeping these staples on hand, you'll always be ready to create a satisfying meal, even on the busiest days, transforming your kitchen into a hub of culinary creativity.</p>
+                </div>
+                <div class="card p-6 flex flex-col items-center text-center">
+                    <h4 class="text-xl font-semibold mb-2">Beginner Cooking Challenges</h4>
+                    <p class="text-sm text-slate-gray-600 mb-4">Put your new skills to the test with fun, achievable cooking challenges!</p>
+                    <ul class="list-disc list-inside text-left text-sm mb-4">
+                        <li><strong>The "Mystery Box" Challenge:</strong> Create a meal from 3 random pantry items.</li>
+                        <li><strong>One-Pot Wonder Challenge:</strong> Cook a complete meal using only one pot.</li>
+                        <li><strong>Breakfast for Dinner:</strong> Get creative with breakfast staples for an evening meal.</li>
+                        <li><strong>No-Recipe Recipe:</strong> Follow a basic framework, but improvise with flavors.</li>
+                    </ul>
+                    <p class="text-xs text-slate-gray-500">Our beginner cooking challenges are designed to make learning fun and help you apply your newfound skills in a practical, low-pressure environment. The "Mystery Box" challenge encourages creativity and resourcefulness, teaching you to think on your feet with limited ingredients. The "One-Pot Wonder" challenge reinforces the concept of minimal cleanup while still creating a delicious, cohesive meal. "Breakfast for Dinner" pushes you to think outside the box and repurpose familiar ingredients in new and exciting ways. Finally, the "No-Recipe Recipe" challenge encourages improvisation and helps you develop an intuitive sense for flavor combinations, moving beyond strict instructions. These challenges are not just about cooking; they're about building confidence, fostering creativity, and proving to yourself that you can create amazing food with a little bit of adventurous spirit. Embrace the fun and watch your culinary confidence soar!</p>
+                </div>
+            </div>
+            <p class="text-center text-md mt-8">Embark on your culinary journey with confidence! Newbie Kitchen 101 is your trusted companion, offering clear, concise, and encouraging guidance for every step. From understanding basic cooking terms to mastering essential techniques, we're here to make your learning experience enjoyable and stress-free. Our goal is to empower you with the knowledge and skills to cook delicious meals independently, transforming cooking from a chore into a delightful hobby. Get ready to unlock your inner chef and discover the joy of creating incredible food from scratch!</p>
+        </section>
+
+        <!-- Weekly Meal Ideas Section -->
+        <section id="weekly-meals" class="mb-16 card p-8 bg-zesty-lemon-yellow text-slate-gray">
+            <h2 class="section-heading text-slate-gray">🗓️ Weekly Meal Ideas: Simplify Your Week</h2>
+            <p class="text-center text-lg mb-10 max-w-3xl mx-auto">Tired of asking "What's for dinner?" every night? Our weekly meal ideas take the guesswork out of meal planning! We provide pre-planned, easy-to-follow menus complete with grocery lists, catering to various preferences like vegetarian, kid-friendly, and protein-packed options. Spend less time planning and more time enjoying delicious, stress-free meals throughout your week.</p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="card p-6 bg-cloud-white text-slate-gray">
+                    <h3 class="text-2xl font-bold text-bold-berry-red mb-4">Week 1: Quick & Healthy Start</h3>
+                    <p class="text-md mb-4">Kick off your week with balanced, easy-to-make meals that are both nutritious and delicious. This plan focuses on fresh ingredients and minimal cooking time.</p>
+                    <ul class="list-disc list-inside text-left text-md mb-4">
+                        <li><strong>Monday:</strong> Lemon Herb Salmon with Roasted Asparagus (20 min)</li>
+                        <li><strong>Tuesday:</strong> Black Bean Burgers on Buns with Side Salad (15 min)</li>
+                        <li><strong>Wednesday:</strong> One-Pan Chicken Fajita Bowls (30 min)</li>
+                        <li><strong>Thursday:</strong> Speedy Shrimp Scampi with Zucchini Noodles (15 min)</li>
+                        <li><strong>Friday:</strong> Homemade Pizza on Store-Bought Dough (25 min)</li>
+                        <li><strong>Saturday:</strong> Leftover Night / Order In</li>
+                        <li><strong>Sunday:</strong> Simple Roasted Chicken with Root Vegetables (45 min, mostly passive)</li>
+                    </ul>
+                    <h4 class="text-xl font-semibold mt-6 mb-2">Grocery List Highlights:</h4>
+                    <ul class="list-disc list-inside text-left text-sm">
+                        <li>Produce: Lemons, asparagus, lettuce, tomatoes, bell peppers, zucchini, onions, garlic, carrots, potatoes.</li>
+                        <li>Proteins: Salmon fillets, ground chicken/chicken breast, shrimp, black bean burgers.</li>
+                        <li>Pantry: Olive oil, dried herbs, whole wheat buns, pizza dough, canned crushed tomatoes, chicken broth.</li>
+                    </ul>
+                    <p class="text-xs text-slate-gray-500 mt-4">This meal plan is designed for those looking to maintain a healthy lifestyle without sacrificing convenience. Each meal is carefully selected to be quick to prepare, utilizing fresh ingredients that are readily available. The "One-Pan Chicken Fajita Bowls" are a fantastic example of a complete meal with minimal cleanup, while the "Speedy Shrimp Scampi" offers a light yet flavorful option. The "Homemade Pizza" night is a fun, customizable activity that still keeps cooking time low. We've also included a "Leftover Night" to encourage mindful eating and reduce food waste. The "Simple Roasted Chicken" on Sunday is a classic comfort food that requires more passive cooking time, allowing you to relax while dinner prepares itself. This plan aims to provide a diverse range of flavors and textures, ensuring your week is filled with exciting and wholesome meals.</p>
+                </div>
+                <div class="card p-6 bg-cloud-white text-slate-gray">
+                    <h3 class="text-2xl font-bold text-bold-berry-red mb-4">Week 2: Comfort & Budget Focus</h3>
+                    <p class="text-md mb-4">Embrace comforting flavors and smart budget-friendly choices with this meal plan. Perfect for cozy evenings and making your groceries stretch further.</p>
+                    <ul class="list-disc list-inside text-left text-md mb-4">
+                        <li><strong>Monday:</strong> Hearty Lentil Soup with Crusty Bread (30 min)</li>
+                        <li><strong>Tuesday:</strong> Cheesy Tuna Noodle Casserole (20 min prep, 25 min bake)</li>
+                        <li><strong>Wednesday:</strong> Speedy Black Bean Quesadillas with Corn Salsa (15 min)</li>
+                        <li><strong>Thursday:</strong> Creamy Tomato Pasta with Spinach (20 min)</li>
+                        <li><strong>Friday:</strong> Homemade Chicken Nuggets with Sweet Potato Fries (30 min)</li>
+                        <li><strong>Saturday:</strong> Simple Beef Stir-fry with Rice (25 min)</li>
+                        <li><strong>Sunday:</strong> Slow Cooker Pulled Pork Sandwiches (4-6 hours passive, minimal prep)</li>
+                    </ul>
+                    <h4 class="text-xl font-semibold mt-6 mb-2">Grocery List Highlights:</h4>
+                    <ul class="list-disc list-inside text-left text-sm">
+                        <li>Produce: Onions, carrots, celery, spinach, sweet potatoes, bell peppers.</li>
+                        <li>Proteins: Dried lentils, canned tuna, chicken breast, ground beef, pork shoulder.</li>
+                        <li>Pantry: Pasta, canned black beans, tortillas, canned diced tomatoes, rice, bread, cheese, frozen corn.</li>
+                    </ul>
+                    <p class="text-xs text-slate-gray-500 mt-4">This meal plan focuses on delivering maximum comfort and flavor while keeping an eye on your budget. The "Hearty Lentil Soup" is a prime example of a cost-effective, nutritious, and incredibly satisfying meal that yields excellent leftovers. The "Cheesy Tuna Noodle Casserole" is a nostalgic classic that's easy to assemble and bake, perfect for a family dinner. "Speedy Black Bean Quesadillas" offer a quick and customizable option, while "Creamy Tomato Pasta" provides a simple yet rich vegetarian dish. For a fun weekend meal, "Homemade Chicken Nuggets" are a healthier alternative to fast food, paired with nutritious sweet potato fries. The "Slow Cooker Pulled Pork" is ideal for a lazy Sunday, requiring minimal hands-on time for a delicious, versatile protein. This plan demonstrates that budget-friendly meals can be incredibly diverse and flavorful, ensuring you eat well without overspending.</p>
+                </div>
+            </div>
+            <p class="text-center text-md mt-8">Let TastyCooksy take the stress out of mealtime! Our weekly meal ideas are meticulously crafted to provide you with diverse, delicious, and easy-to-follow menus. Each plan comes with a convenient grocery list, helping you shop smarter and reduce food waste. Whether you're looking for quick weeknight solutions, healthy options, or comforting family favorites, our meal plans have something for everyone. Reclaim your evenings and enjoy the simple pleasure of home-cooked meals, perfectly planned and effortlessly executed. Get ready to transform your approach to daily cooking!</p>
+        </section>
+
+        <!-- Cooksy Community Wall Section -->
+        <section id="community-wall" class="mb-16">
+            <h2 class="section-heading text-gradient">🌟 Cooksy Community Wall: Share Your Culinary Journey!</h2>
+            <p class="text-center text-lg mb-10 max-w-3xl mx-auto">Join the TastyCooksy family! Our community wall is a vibrant space where you can share your cooking triumphs, laugh at your culinary mishaps, and connect with fellow food enthusiasts. Post your food pics, share your "My First Time Cooking" stories, and upvote your favorite community meals. Let's inspire each other to cook, learn, and grow!</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-6 flex flex-col items-center text-center">
+                    <h4 class="text-xl font-semibold mb-2">"My First Perfect Omelette!"</h4>
+                    <p class="text-sm text-slate-gray-600 mb-4"><em>Posted by @CookingNewbieSarah</em></p>
+                    <p class="text-xs text-slate-gray-500">"Never thought I'd make an omelette this fluffy! Thanks, TastyCooksy, for the 'Egg-cellent Basics' video. It actually worked! So proud of this breakfast creation. Who knew cooking could be this fun and rewarding? Definitely going to try more recipes this week. Next up: pancakes!"</p>
+                    <div class="flex items-center mt-4">
+                        <span class="text-bold-berry-red mr-2">❤️ 125 Likes</span>
+                        <span class="text-fresh-mint-green">💬 15 Comments</span>
+                    </div>
+                </div>
+                <div class="card p-6 flex flex-col items-center text-center">
+                    <h4 class="text-xl font-semibold mb-2">"One-Pot Pasta Success!"</h4>
+                    <p class="text-sm text-slate-gray-600 mb-4"><em>Posted by @BusyDadCooks</em></p>
+                    <p class="text-xs text-slate-gray-500">"Finally, a meal that doesn't involve a mountain of dishes! Tried the One-Pot Sausage & Peppers Pasta from TastyCooksy. It was so easy and the kids devoured it. My new go-to weeknight dinner. Highly recommend for any busy parent out there. Less cleanup means more family time!"</p>
+                    <div class="flex items-center mt-4">
+                        <span class="text-bold-berry-red mr-2">❤️ 210 Likes</span>
+                        <span class="text-fresh-mint-green">💬 28 Comments</span>
+                    </div>
+                </div>
+                <div class="card p-6 flex flex-col items-center text-center">
+                    <h4 class="text-xl font-semibold mb-2">"My 'Crispy' Brownie Fail 😂"</h4>
+                    <p class="text-sm text-slate-gray-600 mb-4"><em>Posted by @KitchenAdventures</em></p>
+                    <p class="text-xs text-slate-gray-500">"Attempted the Microwave Mug Brownie... let's just say it became a very crispy cookie. Lesson learned: don't walk away from the microwave! Still tasted good though! #cookingfail #learningcurve #tastycooksy" </p>
+                    <div class="flex items-center mt-4">
+                        <span class="text-bold-berry-red mr-2">❤️ 98 Likes</span>
+                        <span class="text-fresh-mint-green">💬 32 Comments</span>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-md mt-8">Your cooking journey is unique, and we want to celebrate every step of it! The Cooksy Community Wall is a place of encouragement, shared laughter, and endless inspiration. Whether you're showcasing a perfectly plated meal or sharing a comical kitchen mishap, your contributions make our community richer. Connect with others, get tips, and discover new favorite recipes inspired by real cooks like you. Let's build a supportive and fun space where everyone feels empowered to cook and share their passion for food!</p>
+        </section>
+
+        <!-- Interactive Features Section (Descriptions) -->
+        <section class="mb-16 card p-8 bg-bold-berry-red text-black">
+            <h2 class="section-heading text-cloud-white">💡 Interactive Features: Cook Smarter, Not Harder</h2>
+            <p class="text-center text-lg mb-10 max-w-3xl mx-auto">TastyCooksy is designed to make your cooking experience seamless and enjoyable. Our interactive features put you in control, helping you find the perfect recipe, visualize steps, and plan your meals with ease. Get ready to revolutionize your kitchen routine!</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-6 bg-cloud-white text-slate-gray flex flex-col items-center text-center">
+                    <h4 class="text-xl font-semibold mb-2">Quick Filters & Smart Search</h4>
+                    <p class="text-sm text-slate-gray-600 mb-4">Find exactly what you're looking for in seconds. Filter recipes by prep time (e.g., "under 15 mins"), difficulty level ("absolute beginner"), or number of ingredients ("5 ingredients or less"). Our smart search understands natural language, making discovery effortless.</p>
+                </div>
+                <div class="card p-6 bg-cloud-white text-slate-gray flex flex-col items-center text-center">
+                    <h4 class="text-xl font-semibold mb-2">First-Timer Friendly Tags</h4>
+                    <p class="text-sm text-slate-gray-600 mb-4">Every recipe suitable for absolute beginners is clearly marked with a special "First-Timer Friendly" tag. This ensures you can confidently choose recipes that match your skill level, building your confidence one delicious meal at a time. No more guessing if a recipe is too complex!</p>
+                </div>
+                <div class="card p-6 bg-cloud-white text-slate-gray flex flex-col items-center text-center">
+                    <h4 class="text-xl font-semibold mb-2">Step Visualizer & GIFs</h4>
+                    <p class="text-sm text-slate-gray-600 mb-4">Confused by a step? Simply hover or tap on any instruction to reveal a corresponding photo or short looping GIF. See exactly how to chop, mix, or fold, making complex techniques simple and easy to follow. Visual learning at its best!</p>
+                </div>
+                <div class="card p-6 bg-cloud-white text-slate-gray flex flex-col items-center text-center col-span-full md:col-span-1 md:col-start-2">
+                    <h4 class="text-xl font-semibold mb-2">Personalized Meal Planner Tool</h4>
+                    <p class="text-sm text-slate-gray-600 mb-4">Take control of your weekly meals with our intuitive drag & drop meal planner. Easily add recipes to your schedule, generate automatic grocery lists based on your selections, and even adjust serving sizes. Meal prep has never been this simple and fun!</p>
+                </div>
+            </div>
+            <p class="text-center text-md mt-8">These interactive features are designed to empower you in the kitchen, making cooking less daunting and more enjoyable. From finding the perfect recipe in a flash to visualizing every step, TastyCooksy is committed to providing a seamless and supportive culinary experience. We believe that technology can enhance your cooking journey, and our features are built with your convenience and success in mind. Explore, experiment, and enjoy the effortless way to delicious meals!</p>
+        </section>
+
+        <!-- Mobile Experience Section (Descriptions) -->
+        <section class="mb-16">
+            <h2 class="section-heading text-gradient">📱 Mobile Experience: Cook On The Go!</h2>
+            <p class="text-center text-lg mb-10 max-w-3xl mx-auto">TastyCooksy is built for your busy lifestyle. Our mobile experience is seamlessly optimized for one-handed browsing, ensuring you can follow recipes easily, even when your hands are full. Enjoy crystal-clear video recipes, quick access to your favorites, and timely notifications for new culinary inspiration, all from your smartphone or tablet.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card p-6 flex flex-col items-center text-center">
+                    <h4 class="text-xl font-semibold mb-2">Optimized for One-Handed Browsing</h4>
+                    <p class="text-sm text-slate-gray-600 mb-4">Our interface is designed for effortless navigation with just one thumb. Large, easy-to-tap buttons and intuitive layouts mean you can scroll through recipes, watch videos, and check off ingredients without missing a beat, even while stirring a pot or chopping veggies.</p>
+                </div>
+                <div class="card p-6 flex flex-col items-center text-center">
+                    <h4 class="text-xl font-semibold mb-2">Easy-to-Follow Video Recipes</h4>
+                    <p class="text-sm text-slate-gray-600 mb-4">Our short, engaging video recipes are perfectly formatted for mobile screens. Crystal-clear visuals and concise instructions make it feel like a personal cooking class right in your kitchen, ensuring you never miss a step, even on the smallest screen.</p>
+                </div>
+                <div class="card p-6 flex flex-col items-center text-center">
+                    <h4 class="text-xl font-semibold mb-2">Save Favorites for Quick Repeats</h4>
+                    <p class="text-sm text-slate-gray-600 mb-4">Found a recipe you love? Easily save it to your personal favorites list for instant access. No more searching! Your go-to meals are just a tap away, making repeat cooking incredibly convenient and stress-free.</p>
+                </div>
+                <div class="card p-6 flex flex-col items-center text-center">
+                    <h4 class="text-xl font-semibold mb-2">Push Notifications for New Recipes</h4>
+                    <p class="text-sm text-slate-gray-600 mb-4">Stay updated with the latest fast and foolproof recipes! Opt-in for push notifications to get instant alerts on new additions to our library, seasonal specials, and exciting cooking challenges, ensuring you're always inspired.</p>
+                </div>
+            </div>
+            <p class="text-center text-md mt-8">TastyCooksy's mobile experience is designed to be your ultimate kitchen companion, providing seamless access to delicious recipes and cooking guidance wherever you are. Whether you're at the grocery store checking ingredients or cooking along in your kitchen, our app ensures a smooth and intuitive experience. We believe that great cooking should be accessible to everyone, everywhere, and our mobile optimization reflects that commitment. Download the app today and unlock a world of culinary convenience and inspiration!</p>
+        </section>
+
+        <!-- Why TastyCooksy is Different Section -->
+        <section class="mb-16 card p-8 bg-fresh-mint-green text-black">
+            <h2 class="section-heading text-cloud-white">Why TastyCooksy is Different</h2>
+            <p class="text-center text-lg mb-10 max-w-3xl mx-auto">In a world full of complex culinary sites, TastyCooksy stands out. We're not just another recipe platform; we're your partner in making cooking genuinely easy, fun, and foolproof. Here's what sets us apart and why you'll love cooking with us:</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-6 bg-cloud-white text-slate-gray flex flex-col items-center text-center">
+                    <h4 class="text-xl font-semibold mb-2">Pure Beginner Focus, No Jargon</h4>
+                    <p class="text-sm text-slate-gray-600 mb-4">We speak your language, not chef-speak. Our recipes and guides are crafted specifically for beginners, demystifying cooking with clear, simple instructions and absolutely no intimidating culinary jargon. We believe everyone can cook, and we're here to prove it.</p>
+                </div>
+                <div class="card p-6 bg-cloud-white text-slate-gray flex flex-col items-center text-center">
+                    <h4 class="text-xl font-semibold mb-2">Fast, Visual-First Learning</h4>
+                    <p class="text-sm text-slate-gray-600 mb-4">Forget endless paragraphs. We prioritize short, fast-paced video guides and looping GIFs for visual learners. See exactly how each step is done, making complex techniques simple and ensuring you cook with confidence, just like watching your favorite Reels.</p>
+                </div>
+                <div class="card p-6 bg-cloud-white text-slate-gray flex flex-col items-center text-center">
+                    <h4 class="text-xl font-semibold mb-2">Emphasis on Fun, Low-Stress Cooking</h4>
+                    <p class="text-sm text-slate-gray-600 mb-4">Cooking should be an enjoyable experience, not a chore. Our platform is designed to reduce stress, promote creativity, and infuse fun into every meal preparation. We celebrate imperfections and encourage experimentation, fostering a joyful kitchen environment.</p>
+                </div>
+                <div class="card p-6 bg-cloud-white text-slate-gray flex flex-col items-center text-center">
+                    <h4 class="text-xl font-semibold mb-2">Colorful, Energetic, Playful Branding</h4>
+                    <p class="text-sm text-slate-gray-600 mb-4">From our Zesty Lemon Yellow to our Bold Berry Red, our visual identity is designed to be uplifting and approachable. Our vibrant colors, friendly fonts, and playful imagery create an inviting atmosphere that makes cooking feel like an exciting adventure.</p>
+                </div>
+                <div class="card p-6 bg-cloud-white text-slate-gray flex flex-col items-center text-center">
+                    <h4 class="text-xl font-semibold mb-2">Strong Social Media Integration</h4>
+                    <p class="text-sm text-slate-gray-600 mb-4">We live where you live – on social media! Our content is tailor-made for platforms like TikTok and Instagram Reels, offering snackable, shareable cooking content that fits seamlessly into your digital life. Join our community and share your culinary journey!</p>
+                </div>
+            </div>
+            <p class="text-center text-md mt-8">At TastyCooksy, we're redefining home cooking for the modern world. We understand the challenges of busy schedules and the desire for delicious, homemade meals without the overwhelming complexity. Our unique approach combines simplicity, visual learning, and a fun, supportive community to make cooking accessible and enjoyable for everyone. Join us and discover how easy it is to achieve "Quick Wins in the Kitchen" and make "Tasty Made Easy" a reality in your daily life. Welcome to a new era of cooking, where every meal is a celebration of flavor and simplicity!</p>
+        </section>
+
+        <!-- Customer Satisfaction Section -->
+        <section class="mb-16">
+            <h2 class="section-heading text-gradient">⭐ Customer Satisfaction: What Our Cooks Say!</h2>
+            <p class="text-center text-lg mb-10 max-w-3xl mx-auto">Your success in the kitchen is our greatest reward. We're incredibly proud of the positive impact TastyCooksy has had on our users' cooking journeys. Hear directly from our community about how we've helped them transform their relationship with food, one delicious, foolproof recipe at a time.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-6 flex flex-col items-center text-center bg-zesty-lemon-yellow/20">
+                    <p class="text-xl font-bold mb-2">"A Game Changer!"</p>
+                    <p class="text-sm text-slate-gray-700 italic mb-4">"I used to dread cooking, but TastyCooksy has completely changed that! The 15-minute meals are a lifesaver, and the video guides are so easy to follow. I've actually cooked more in the last month than I have all year. Thank you for making cooking fun!"</p>
+                    <p class="font-semibold text-bold-berry-red">- Emily R., Student</p>
+                </div>
+                <div class="card p-6 flex flex-col items-center text-center bg-fresh-mint-green/20">
+                    <p class="text-xl font-bold mb-2">"Foolproof Indeed!"</p>
+                    <p class="text-sm text-slate-gray-700 italic mb-4">"As a first-time cook, I needed something truly foolproof. TastyCooksy delivered! The 'Newbie Kitchen 101' section gave me so much confidence, and I love the '5-Ingredient Wonders.' My family is amazed at what I'm cooking now. Highly recommend!"</p>
+                    <p class="font-semibold text-bold-berry-red">- Mark T., New Parent</p>
+                </div>
+                <div class="card p-6 flex flex-col items-center text-center bg-bold-berry-red/20">
+                    <p class="text-xl font-bold mb-2">"My Go-To for Quick Meals"</p>
+                    <p class="text-sm text-slate-gray-700 italic mb-4">"Between work and kids, finding time to cook is tough. TastyCooksy's quick recipes are my absolute go-to. The weekly meal plans save me so much mental energy, and the grocery lists are a blessing. It's fast, it's fun, and it works!"</p>
+                    <p class="font-semibold text-bold-berry-red">- Jessica L., Busy Professional</p>
+                </div>
+                <div class="card p-6 flex flex-col items-center text-center bg-zesty-lemon-yellow/20">
+                    <p class="text-xl font-bold mb-2">"Love the Community!"</p>
+                    <p class="text-sm text-slate-gray-700 italic mb-4">"Beyond the amazing recipes, I love the Cooksy Community Wall. It's so encouraging to see others' cooking journeys, and sharing my own little triumphs (and fails!) has been a blast. It really feels like a supportive family."</p>
+                    <p class="font-semibold text-bold-berry-red">- David S., Casual Foodie</p>
+                </div>
+                <div class="card p-6 flex flex-col items-center text-center bg-fresh-mint-green/20">
+                    <p class="text-xl font-bold mb-2">"Finally, Cooking Made Easy!"</p>
+                    <p class="text-sm text-slate-gray-700 italic mb-4">"I've always been intimidated by cooking, but TastyCooksy's visual approach changed everything. The GIFs and short videos are incredibly helpful. I'm actually enjoying cooking now, and my meals taste fantastic. Thank you for simplifying everything!"</p>
+                    <p class="font-semibold text-bold-berry-red">- Sarah K., College Student</p>
+                </div>
+            </div>
+            <p class="text-center text-md mt-8">These testimonials are just a glimpse into the countless success stories from our vibrant community. We are dedicated to continuously improving TastyCooksy to meet your needs and exceed your expectations. Your feedback drives our innovation, and we are committed to making your cooking journey as enjoyable and rewarding as possible. Join thousands of satisfied cooks who have found their culinary confidence with TastyCooksy – where delicious meals are always within reach!</p>
+        </section>
+
+        <!-- Disclaimer Section -->
+        <section class="mb-16 card p-8 bg-slate-gray text-black">
+            <h2 class="section-heading text-cloud-white">⚖️ Disclaimer</h2>
+            <div class="text-sm leading-relaxed opacity-90">
+                <p class="mb-4">Welcome to TastyCooksy! Our mission is to provide fast, fun, and foolproof recipes and cooking guidance to help you create delicious meals with ease. Please read this comprehensive disclaimer carefully before using our website and engaging with our content. By accessing or using TastyCooksy.com, you acknowledge and agree to the terms outlined below. If you do not agree with any part of this disclaimer, please refrain from using our website.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">1. General Information and Educational Purposes Only</h3>
+                <p class="mb-4">All content provided on TastyCooksy.com, including but not limited to recipes, cooking tips, articles, videos, and community posts, is intended for general informational and educational purposes only. It is not intended to be a substitute for professional culinary advice, dietary advice, medical advice, diagnosis, or treatment. Always seek the advice of a qualified professional for any questions you may have regarding a medical condition, dietary needs, or food preparation safety. We strive to provide accurate and up-to-date information, but we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">2. Nutritional Information and Dietary Needs</h3>
+                <p class="mb-4">Any nutritional information provided on TastyCooksy.com (e.g., calorie counts, macronutrient breakdowns) is an estimate only and should not be considered a guarantee. This information is generated using online calculators and may vary based on specific ingredients, brands, cooking methods, and portion sizes used. We strongly recommend that individuals with specific dietary needs, allergies, medical conditions, or health concerns consult with a registered dietitian, nutritionist, or healthcare professional before making any significant dietary changes or relying on the nutritional information provided. TastyCooksy does not assume any responsibility for adverse reactions to food consumed or advice followed based on information from this website.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">3. Food Allergies and Sensitivities</h3>
+                <p class="mb-4">TastyCooksy recipes may contain common allergens such as nuts, dairy, gluten, soy, eggs, and shellfish. While we may offer suggestions for substitutions or allergy-friendly alternatives, it is solely your responsibility to read ingredient labels, identify potential allergens, and ensure that the ingredients you use are safe for your consumption and for anyone you are cooking for. We cannot guarantee that any recipe is free from specific allergens or cross-contamination. If you have severe food allergies, it is crucial to exercise extreme caution and consult with a medical professional or allergist before preparing or consuming any food based on our recipes. TastyCooksy disclaims all liability for any allergic reactions or health issues arising from the consumption of food prepared using our recipes.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">4. Kitchen Safety and Equipment Use</h3>
+                <p class="mb-4">Cooking involves inherent risks, including but not limited to cuts, burns, slips, and falls. When following our recipes or cooking tips, you are solely responsible for exercising proper kitchen safety practices, using appropriate cooking equipment, and adhering to safe food handling guidelines. This includes, but is not limited to, proper knife handling, safe use of ovens, stovetops, and other appliances, and preventing cross-contamination. Children should always be supervised by an adult when in the kitchen. TastyCooksy is not responsible for any injuries, accidents, or damages that may occur while preparing food or using kitchen equipment based on information from our website.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">5. Recipe Accuracy and Results</h3>
+                <p class="mb-4">While we strive to provide accurate and easy-to-follow recipes, individual results may vary. Factors such as ingredient quality, precise measurements, cooking equipment, oven calibration, and personal cooking skill can all influence the outcome of a recipe. We cannot guarantee that every recipe will turn out exactly as described or pictured. We encourage users to use their judgment and adapt recipes as needed based on their experience and preferences. TastyCooksy is not liable for any unsatisfactory results, wasted ingredients, or other issues arising from following our recipes.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">6. External Links and Third-Party Content</h3>
+                <p class="mb-4">TastyCooksy.com may contain links to external websites or resources that are not owned or controlled by us. These links are provided for your convenience and informational purposes only. We have no control over the nature, content, and availability of those sites. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them. We are not responsible for the privacy practices or the content of such external sites. Your use of any linked website is at your own risk, and we encourage you to review the terms and conditions and privacy policies of any third-party sites you visit.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">7. User-Generated Content</h3>
+                <p class="mb-4">Our "Cooksy Community Wall" and other interactive features may allow users to post, upload, or submit content, including comments, photos, and reviews. TastyCooksy does not endorse or guarantee the accuracy, completeness, or reliability of any user-generated content. The views and opinions expressed in user-generated content are those of the individual authors and do not necessarily reflect the views of TastyCooksy. While we may moderate content, we are not responsible for any offensive, inappropriate, or inaccurate content posted by users. You are solely responsible for the content you submit and for ensuring it complies with our terms of service and community guidelines. By submitting content, you grant TastyCooksy a non-exclusive, royalty-free, perpetual, and worldwide license to use, reproduce, modify, publish, and display such content.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">8. Availability and Continuity of Service</h3>
+                <p class="mb-4">While we endeavor to keep TastyCooksy.com up and running smoothly, we take no responsibility for, and will not be liable for, the website being temporarily unavailable due to technical issues beyond our control. We may also, at our sole discretion, modify, suspend, or discontinue any aspect of the website, including its content, features, or availability, at any time without prior notice or liability.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">9. Limitation of Liability</h3>
+                <p class="mb-4">In no event will TastyCooksy, its owners, employees, affiliates, or partners be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website. This includes, but is not limited to, direct, indirect, incidental, punitive, and consequential damages, even if advised of the possibility of such damages. Some jurisdictions do not allow the exclusion or limitation of liability for consequential or incidental damages, so the above limitation may not apply to you.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">10. Changes to Disclaimer</h3>
+                <p class="mb-4">TastyCooksy reserves the right to amend or update this disclaimer at any time without prior notice. Any changes will be posted on this page, and your continued use of the website after such modifications will constitute your acknowledgment of the modified disclaimer and agreement to abide and be bound by the modified disclaimer. We encourage you to review this page periodically for any updates.</p>
+
+                <p class="mt-8 text-center text-base">By using TastyCooksy.com, you signify your acceptance of this disclaimer. If you do not agree to this disclaimer, please do not use our website. Your continued use of the website following the posting of changes to this disclaimer will be deemed your acceptance of those changes.</p>
+                <p class="mt-2 text-center text-base">Last updated: July 5, 2025</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-slate-gray text-cloud-white py-10 rounded-t-3xl shadow-inner">
+        <div class="container flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div class="mb-6 md:mb-0">
+                <h3 class="text-2xl font-bold text-zesty-lemon-yellow mb-2">TastyCooksy</h3>
+                <p class="text-sm opacity-80">Fast. Fun. Foolproof. &copy; 2025</p>
+                <p class="text-sm opacity-80 mt-1">All rights reserved.</p>
+            </div>
+            <div class="mb-6 md:mb-0">
+                <h4 class="text-lg font-semibold text-fresh-mint-green mb-2">Contact Us</h4>
+                <p class="text-sm opacity-80">TastyCooksy Headquarters</p>
+                <p class="text-sm opacity-80">123 Culinary Lane, Flavor Town</p>
+                <p class="text-sm opacity-80">Kitchenland, KL 12345</p>
+                <p class="text-sm opacity-80">Email: <a href="mailto:hello@tastycooksy.com" class="text-zesty-lemon-yellow hover:underline">hello@tastycooksy.com</a></p>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold text-fresh-mint-green mb-2">Quick Links</h4>
+                <ul class="space-y-1">
+                    <li><a href="index.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Home</a></li>
+                    <li><a href="blog.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Blog</a></li>
+                    <li><a href="privacy.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Terms of Service</a></li>
+                    <li><a href="cookies.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Cookie Policy</a></li>
+                    <li><a href="contact.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

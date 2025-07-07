@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Policy — TastyCooksy</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FAFAFA; /* Cloud White */
+            color: #000000; /* Black for text */
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        /* Custom Tailwind Configuration for colors and font */
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        @layer base {
+            :root {
+                --color-zesty-lemon-yellow: #FFEB3B;
+                --color-bold-berry-red: #E53935;
+                --color-cloud-white: #FAFAFA;
+                --color-fresh-mint-green: #66BB6A;
+                --color-slate-gray: #455A64;
+            }
+        }
+
+        .bg-zesty-lemon-yellow { background-color: var(--color-zesty-lemon-yellow); }
+        .text-zesty-lemon-yellow { color: var(--color-zesty-lemon-yellow); }
+        .bg-bold-berry-red { background-color: var(--color-bold-berry-red); }
+        .text-bold-berry-red { color: var(--color-bold-berry-red); }
+        .bg-cloud-white { background-color: var(--color-cloud-white); }
+        .text-cloud-white { color: var(--color-cloud-white); }
+        .bg-fresh-mint-green { background-color: var(--color-fresh-mint-green); }
+        .text-fresh-mint-green { color: var(--color-fresh-mint-green); }
+        .bg-slate-gray { background-color: var(--color-slate-gray); }
+        .text-black-main { color: #000000; } 
+
+        /* Specific styles for navigation links */
+        nav a {
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            color: #E53935; /* Bold Berry Red on hover */
+            transform: translateY(-2px);
+        }
+        .btn-primary {
+            background-color: #FFEB3B; /* Zesty Lemon Yellow */
+            color: #000000; /* Black */
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px; /* Fully rounded */
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary:hover {
+            background-color: #FFD600; /* Slightly darker yellow */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        .btn-secondary {
+            background-color: #66BB6A; /* Fresh Mint Green */
+            color: #ffffff; /* Cloud White */
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-secondary:hover {
+            background-color: #5CB85C; /* Slightly darker green */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        .card {
+            background-color: #FFFFFF; /* Pure White for cards */
+            border-radius: 1rem; /* Rounded corners */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+        .section-heading {
+            color: #E53935; /* Bold Berry Red */
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #E53935, #FFEB3B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Cookie Consent Dialogue Box */
+        #cookie-consent-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #455A64; /* Slate Gray */
+            color: #000000; /* Cloud White */
+            padding: 1.5rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transform: translateY(100%); /* Start hidden */
+            animation: slideUp 0.8s forwards;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        #cookie-consent-banner.hidden {
+            display: none;
+        }
+
+        #cookie-consent-banner p {
+            max-width: 900px;
+            text-align: center;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        #cookie-consent-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #cookie-consent-buttons button {
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+        }
+
+        #cookie-accept {
+            background-color: #66BB6A; /* Fresh Mint Green */
+            color: #FAFAFA; /* Cloud White */
+        }
+        #cookie-accept:hover {
+            background-color: #5CB85C; /* Darker Mint Green */
+            transform: translateY(-2px);
+        }
+
+        #cookie-decline {
+            background-color: #E53935; /* Bold Berry Red */
+            color: #FAFAFA; /* Cloud White */
+        }
+        #cookie-decline:hover {
+            background-color: #CC0000; /* Darker Berry Red */
+            transform: translateY(-2px);
+        }
+
+        #cookie-learn-more {
+            background-color: #FFEB3B; /* Zesty Lemon Yellow */
+            color: #455A64; /* Slate Gray */
+        }
+        #cookie-learn-more:hover {
+            background-color: #FFD600; /* Darker Zesty Lemon Yellow */
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="font-inter bg-cloud-white text-black-main">
+
+    <!-- Header Section -->
+    <header class="bg-cloud-white shadow-md py-4">
+        <div class="container flex flex-col md:flex-row justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center mb-4 md:mb-0">
+                <img src="https://placehold.co/60x60/FFEB3B/455A64?text=TC" alt="TastyCooksy Logo" class="rounded-full mr-3 shadow-md">
+                <h1 class="text-3xl font-bold text-bold-berry-red">TastyCooksy</h1>
+            </div>
+            <!-- Navigation -->
+            <nav>
+                <ul class="flex flex-wrap justify-center md:justify-end space-x-4 md:space-x-8 text-lg font-medium">
+                    <li><a href="index.html" class="text-black-main hover:text-bold-berry-red rounded-md px-3 py-2">Home</a></li>
+                    <li><a href="blog.html" class="text-black-main hover:text-bold-berry-red rounded-md px-3 py-2">Blog</a></li>
+                    <li><a href="privacy.html" class="text-black-main hover:text-bold-berry-red rounded-md px-3 py-2">Privacy</a></li>
+                    <li><a href="terms.html" class="text-black-main hover:text-bold-berry-red rounded-md px-3 py-2">Terms</a></li>
+                    <li><a href="cookies.html" class="text-black-main hover:text-bold-berry-red rounded-md px-3 py-2">Cookies</a></li>
+                    <li><a href="contact.html" class="text-black-main hover:text-bold-berry-red rounded-md px-3 py-2">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container py-16">
+        <section class="mb-16 card p-8 bg-fresh-mint-green text-black">
+            <h2 class="section-heading text-cloud-white">🍪 TastyCooksy Cookie Policy</h2>
+            <p class="text-center text-lg mb-10 max-w-3xl mx-auto">Welcome to TastyCooksy's Cookie Policy! Just like a pinch of salt enhances a recipe, cookies help us enhance your experience on our website. This policy explains what cookies are, how we use them to make your cooking journey faster, fun, and foolproof, and how you can manage your preferences. We believe in transparency, so grab a cup of tea (or your favorite cooking beverage) and let's dive in!</p>
+
+            <div class="text-sm leading-relaxed opacity-90">
+                <h3 class="text-lg font-semibold mt-6 mb-2">1. What Are Cookies? A Culinary Analogy</h3>
+                <p class="mb-4">Imagine cookies as tiny digital recipe cards that websites store on your device (like your computer, tablet, or smartphone) when you visit them. These "recipe cards" contain small bits of information that help the website remember things about you or your actions over time. Just as a chef might use a recipe card to remember ingredients and steps for a dish, our website uses cookies to remember your preferences, login status, or items you've viewed. They're essential for making websites work efficiently and for providing a personalized experience. Cookies can be "session cookies" (which are deleted when you close your browser) or "persistent cookies" (which stay on your device for a set period or until you delete them). They can also be "first-party cookies" (set by the website you're visiting) or "third-party cookies" (set by a domain other than the one you're visiting, often for advertising or analytics).</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">2. How TastyCooksy Uses Cookies: Our Digital Ingredients</h3>
+                <p class="mb-4">At TastyCooksy, we use cookies for a variety of purposes, all aimed at improving your experience and making our Service better. Think of them as different ingredients in our digital kitchen, each serving a specific function to create the perfect user experience. We categorize our cookies to help you understand their purpose:</p>
+
+                <h4 class="text-md font-semibold mt-4 mb-2">2.1. Strictly Necessary Cookies (The Foundation of Our Recipe)</h4>
+                <p class="mb-4">These cookies are absolutely essential for the website to function correctly. Without them, core services like logging into your account, adding recipes to your favorites, or navigating securely wouldn't be possible. They enable basic functionalities and security features of the website. These cookies do not store any personally identifiable information. They are typically set only in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in, or filling in forms. You cannot opt-out of these cookies as the website would not function properly without them. They are like the flour and water in a bread recipe – indispensable.</p>
+                <ul class="list-disc list-inside ml-4 mb-4">
+                    <li><strong>Purpose:</strong> User authentication, security, session management, maintaining user state across page requests.</li>
+                    <li><strong>Examples:</strong> Cookies that remember your login status, shopping cart contents (if applicable), or your cookie consent preferences.</li>
+                    <li><strong>Duration:</strong> Mostly session-based, some persistent for remembering consent.</li>
+                </ul>
+
+                <h4 class="text-md font-semibold mt-4 mb-2">2.2. Performance and Analytics Cookies (Measuring Our Culinary Success)</h4>
+                <p class="mb-4">These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. They allow us to count visits and traffic sources so we can measure and improve the performance of our site. For example, they help us know which pages are the most and least popular and see how visitors move around the site. This data is aggregated and anonymized, meaning it doesn't directly identify you. It's like a chef tasting their dish to see what works and what could be improved – but without knowing who specifically took which bite. This helps us optimize content, identify popular recipes, and ensure our site is running efficiently.</p>
+                <ul class="list-disc list-inside ml-4 mb-4">
+                    <li><strong>Purpose:</strong> Website performance monitoring, traffic analysis, understanding user behavior, identifying popular content.</li>
+                    <li><strong>Examples:</strong> Google Analytics cookies (e.g., `_ga`, `_gid`), which track page views, time on site, and referral sources.</li>
+                    <li><strong>Duration:</strong> Persistent, typically ranging from a few hours to two years.</li>
+                </ul>
+
+                <h4 class="text-md font-semibold mt-4 mb-2">2.3. Functionality and Preference Cookies (Your Personal Recipe Adjustments)</h4>
+                <p class="mb-4">These cookies enable the website to provide enhanced functionality and personalization. They may be set by us or by third-party providers whose services we have added to our pages. For instance, they can remember your username, language preferences, or region. If you do not allow these cookies, then some or all of these services may not function properly. They're like remembering your preferred spice level or whether you like your potatoes mashed or roasted – they make your experience uniquely yours.</p>
+                <ul class="list-disc list-inside ml-4 mb-4">
+                    <li><strong>Purpose:</strong> Remembering user preferences (e.g., language, region), personalizing content, enabling interactive features (e.g., video playback, chat support).</li>
+                    <li><strong>Examples:</strong> Cookies that remember your preferred units of measurement for recipes, or your last search query.</li>
+                    <li><strong>Duration:</strong> Persistent, typically ranging from a few months to one year.</li>
+                </ul>
+
+                <h4 class="text-md font-semibold mt-4 mb-2">2.4. Targeting and Advertising Cookies (Sharing Our Delicious Creations)</h4>
+                <p class="mb-4">These cookies may be set through our site by our advertising partners. They may be used by those companies to build a profile of your interests and show you relevant adverts on other sites. They work by uniquely identifying your browser and device. If you do not allow these cookies, you will experience less targeted advertising. These are like sharing a photo of your perfectly cooked dish – they help us reach others who might also enjoy TastyCooksy, based on their interests. They help us show you ads that are more relevant to your interests and measure the effectiveness of our advertising campaigns.</p>
+                <ul class="list-disc list-inside ml-4 mb-4">
+                    <li><strong>Purpose:</strong> Delivering relevant advertisements, tracking ad campaign performance, building user profiles for targeted marketing.</li>
+                    <li><strong>Examples:</strong> Cookies from Google Ads, Facebook Pixel, or other ad networks.</li>
+                    <li><strong>Duration:</strong> Persistent, typically ranging from a few days to one year.</li>
+                </ul>
+
+                <h4 class="text-md font-semibold mt-4 mb-2">2.5. Social Media Cookies (Connecting Our Culinary Community)</h4>
+                <p class="mb-4">These cookies are set by a range of social media services that we have added to the site to enable you to share our content with your friends and networks. They are capable of tracking your browser across other sites and building up a profile of your interests. This may impact the content and messages you see on other websites you visit. If you do not allow these cookies you may not be able to use or see these sharing tools. They are like inviting friends over for a potluck – they help you share our delicious recipes and connect with others who love cooking. These cookies facilitate social sharing features and track your interaction with social media content on our site.</p>
+                <ul class="list-disc list-inside ml-4 mb-4">
+                    <li><strong>Purpose:</strong> Enabling social sharing buttons, embedding social media feeds, tracking social media interactions.</li>
+                    <li><strong>Examples:</strong> Cookies from Facebook, Instagram, TikTok, YouTube when their content or sharing buttons are embedded.</li>
+                    <li><strong>Duration:</strong> Persistent, typically ranging from a few days to several months.</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">3. Your Cookie Choices and Management: Customizing Your Recipe</h3>
+                <p class="mb-4">You have the power to control your cookie preferences, just like you control the ingredients in your cooking! While strictly necessary cookies are essential for the website's basic functionality, you can choose to accept or decline other types of cookies. Here's how you can manage your cookie settings:</p>
+
+                <h4 class="text-md font-semibold mt-4 mb-2">3.1. Through Our Cookie Consent Banner</h4>
+                <p class="mb-4">When you first visit TastyCooksy.com, you'll see a cookie consent banner at the bottom of your screen. This banner provides you with options to accept all cookies, decline non-essential cookies, or learn more about our cookie usage. Your choice will be remembered for future visits (via a necessary cookie, of course!). You can revisit your preferences at any time by clicking the "Manage Cookie Preferences" link, usually found in our footer or privacy settings.</p>
+
+                <h4 class="text-md font-semibold mt-4 mb-2">3.2. Through Your Browser Settings</h4>
+                <p class="mb-4">Most web browsers allow you to control cookies through their settings. You can typically find these settings in the "Options" or "Preferences" menu of your browser. Here's a general guide, though specific steps may vary by browser:</p>
+                <ul class="list-disc list-inside ml-4 mb-4">
+                    <li><strong>Google Chrome:</strong> Go to Settings > Privacy and security > Site Settings > Cookies and site data.</li>
+                    <li><strong>Mozilla Firefox:</strong> Go to Options > Privacy & Security > Cookies and Site Data.</li>
+                    <li><strong>Microsoft Edge:</strong> Go to Settings > Privacy, search, and services > Clear browsing data or Cookies and site permissions.</li>
+                    <li><strong>Apple Safari:</strong> Go to Safari > Preferences > Privacy.</li>
+                    <li><strong>Opera:</strong> Go to Settings > Privacy & security > Cookies and other site data.</li>
+                </ul>
+                <p class="mb-4">Through your browser settings, you can:
+                <ul class="list-disc list-inside ml-4 mb-4">
+                    <li>Delete all cookies.</li>
+                    <li>Block all cookies.</li>
+                    <li>Allow all cookies.</li>
+                    <li>Block third-party cookies.</li>
+                    <li>Clear cookies when you close your browser.</li>
+                    <li>Get notifications when a cookie is set.</li>
+                </ul>
+                Please note that if you disable all cookies, some parts of our website may not function correctly, and your user experience might be impacted. For example, you might not be able to log in, save preferences, or see personalized content.</p>
+
+                <h4 class="text-md font-semibold mt-4 mb-2">3.3. Opt-Out Mechanisms for Third Parties</h4>
+                <p class="mb-4">Many advertising networks offer you a way to opt out of targeted advertising. If you would like to find out more information, please visit:
+                <ul class="list-disc list-inside ml-4 mb-4">
+                    <li><a href="http://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer" class="text-zesty-lemon-yellow hover:underline">Digital Advertising Alliance (DAA)</a></li>
+                    <li><a href="http://www.youronlinechoices.com/" target="_blank" rel="noopener noreferrer" class="text-zesty-lemon-yellow hover:underline">European Interactive Digital Advertising Alliance (EDAA)</a></li>
+                    <li><a href="http://optout.networkadvertising.org/?c=1" target="_blank" rel="noopener noreferrer" class="text-zesty-lemon-yellow hover:underline">Network Advertising Initiative (NAI)</a></li>
+                </ul>
+                These platforms allow you to manage your preferences for various advertising companies. Opting out through these mechanisms does not mean you will no longer receive advertising; it means that the advertising you see will not be tailored to your interests based on cookie data.</p>
+
+                <h4 class="text-md font-semibold mt-4 mb-2">3.4. Mobile Device Settings</h4>
+                <p class="mb-4">If you access our Service through a mobile device, you may be able to control interest-based advertising through your device's settings. For iOS devices, you can enable "Limit Ad Tracking" (Settings > Privacy > Advertising > Limit Ad Tracking). For Android devices, you can enable "Opt out of Ads Personalization" (Settings > Google > Ads > Opt out of Ads Personalization). These settings can help reduce the amount of targeted advertising you receive on your mobile device.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">4. Third-Party Cookies: Our Collaborating Chefs</h3>
+                <p class="mb-4">In addition to our own cookies, we may use various third-party cookies to report usage statistics of the Service, deliver advertisements on and through the Service, and so on. These third-party cookies are set by domains other than TastyCooksy.com and are often used by partners who provide services like analytics, advertising, or social media integration. While we carefully select our partners, we do not have direct control over the specific cookies they set or how they use the information collected. We encourage you to review the privacy policies of these third parties to understand their data practices.</p>
+                <ul class="list-disc list-inside ml-4 mb-4">
+                    <li><strong>Analytics Providers:</strong> Services like Google Analytics help us understand how users interact with our website. They collect data on page views, time spent on pages, referral sources, and more, all in an anonymized fashion. This data is crucial for us to identify areas for improvement and ensure our content is engaging.</li>
+                    <li><strong>Advertising Partners:</strong> We work with advertising networks (e.g., Google Ads, Facebook) to display relevant ads. These partners may use cookies to track your browsing activity across different websites to build a profile of your interests and show you personalized advertisements.</li>
+                    <li><strong>Social Media Platforms:</strong> When we embed content from social media platforms (like YouTube videos or Instagram posts) or include social sharing buttons, these platforms may set their own cookies. These cookies allow you to share content easily and may track your activity across different sites.</li>
+                    <li><strong>Content Delivery Networks (CDNs):</strong> We may use CDNs to deliver content faster. These services might use cookies to optimize content delivery based on your location.</li>
+                    <li><strong>Customer Support Tools:</strong> If we use third-party chat or support tools, they might use cookies to remember your chat history or user ID for seamless support.</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">5. Changes to Our Cookie Policy: Adapting Our Recipe</h3>
+                <p class="mb-4">We may update our Cookie Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. For example, if we introduce new features that use different types of cookies, we will update this policy accordingly. We will notify you of any significant changes by posting the new Cookie Policy on this page and updating the "Last updated" date at the top of this policy. We may also provide a prominent notice on our Service (e.g., a banner or pop-up) or send you an email prior to the change becoming effective. You are advised to review this Cookie Policy periodically for any changes. Changes to this Cookie Policy are effective when they are posted on this page. Your continued use of the Service after the revised Cookie Policy has become effective indicates that you have read, understood, and agreed to the current version of the Cookie Policy.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">6. Detailed Scenarios for Cookie-Related Inquiries: Your Voice in Our Kitchen</h3>
+                <p class="mb-4">We are committed to ensuring you have full control over your data and clear channels to communicate any concerns or questions regarding our use of cookies. Below are various detailed scenarios and how you can contact us for each, ensuring your voice is heard and your preferences are respected.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.1. General Questions About Our Cookie Policy</h4>
+                <p class="mb-4">If you have general questions about any aspect of this Cookie Policy, such as what certain terms mean, or how a specific type of cookie functions, we encourage you to reach out. We understand that legal and technical language can sometimes be complex, and we're here to clarify. Your understanding of our practices is paramount to building trust. Please provide specific questions you have, and our team will endeavor to provide clear and concise answers. This helps us not only assist you but also identify areas where we can improve the clarity of our policies for all users. We aim to make privacy as digestible as our recipes.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.2. Requesting Information on Specific Cookies Used</h4>
+                <p class="mb-4">You have the right to request a detailed list of the specific cookies currently in use on TastyCooksy.com, including their names, purposes, duration, and whether they are first-party or third-party. While we provide general categories in this policy, a dynamic list can change as we update our services or integrate new tools. If you require this granular information, please specify the type of data you are looking for (e.g., "all analytics cookies," "all third-party cookies"). We will compile and provide this information to you in a clear and accessible format, ensuring you have a complete overview of the digital ingredients on our site. This transparency is a core part of our commitment to your data privacy.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.3. Changing Your Cookie Preferences After Initial Consent</h4>
+                <p class="mb-4">If you initially accepted or declined cookies via our banner and wish to change your mind, you can do so at any time. We believe your preferences should be easily adjustable. While our cookie banner offers a direct way to manage this, if you encounter any difficulties or need assistance, please contact us. Describe the change you wish to make (e.g., "I want to accept all cookies now," or "I want to decline marketing cookies"). Our support team can guide you through the process or, in some cases, reset your consent preferences on our end so the banner reappears, allowing you to make a new choice. Your control over your data is continuous, not a one-time decision.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.4. Exercising Your Data Protection Rights (GDPR, CCPA, etc.) Related to Cookies</h4>
+                <p class="mb-4">Depending on your geographic location, you may have specific data protection rights concerning your personal data collected via cookies. This includes rights such as access, rectification, erasure ("right to be forgotten"), restriction of processing, data portability, and objection to processing. If you wish to exercise any of these rights specifically related to data collected through cookies, please contact us. Clearly state which right you wish to exercise and provide enough detail for us to identify your data and process your request. We will verify your identity to ensure the security of your data before fulfilling your request, and we will do so in accordance with applicable data protection laws and within the stipulated timeframes. Our commitment extends to empowering you with these legal rights.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.5. Reporting Suspected Unauthorized Cookie Activity or Data Breach</h4>
+                <p class="mb-4">If you suspect any unauthorized or suspicious activity related to cookies on TastyCooksy.com, or if you believe there might have been a data breach involving information collected via cookies, please notify us immediately. Your vigilance is crucial in maintaining a secure environment for everyone. Provide details such as the nature of the suspicious activity, any unusual pop-ups or redirects, or specific data points you believe might be compromised. Our security team will investigate all reports thoroughly and take appropriate action to address any vulnerabilities or breaches. We treat all security reports with the highest priority and confidentiality, ensuring a swift and effective response to protect your data.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.6. Inquiries About Third-Party Cookies and Their Practices</h4>
+                <p class="mb-4">While we list categories of third-party cookies, you might have specific questions about a particular third-party service (e.g., Google Analytics, Facebook Pixel) and how they use cookies on our site. If you need more information about a specific third-party cookie, please identify the service or cookie name if possible. We can provide general information about our integration with these services, but for their specific data practices, we will direct you to their respective privacy and cookie policies, as they are the data controllers for their own cookies. We encourage you to review their policies directly for the most accurate and up-to-date information on their data handling practices. Our role is to facilitate your understanding and provide access to relevant information.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.7. Technical Issues with Cookie Functionality or Consent Banner</h4>
+                <p class="mb-4">If you are experiencing technical difficulties with our cookie consent banner (e.g., it's not appearing, not remembering your choice, or causing display issues) or with any cookie-dependent functionality on the website, please let us know. Provide details such as the browser you are using, your device type, and a step-by-step description of the issue you are encountering. Screenshots or screen recordings can be extremely helpful in diagnosing technical problems. Our technical support team will investigate the issue promptly to ensure that our cookie management tools are functioning correctly and that your experience on TastyCooksy.com remains seamless and enjoyable. Your feedback helps us maintain a robust and user-friendly platform.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.8. Feedback or Suggestions Regarding Our Cookie Policy</h4>
+                <p class="mb-4">We are always striving to improve the clarity and comprehensiveness of our policies. If you have any feedback, suggestions, or ideas on how we can make this Cookie Policy even better, more transparent, or easier to understand, we welcome your input. Your insights as a user are invaluable in helping us refine our communication. Please share your thoughts on what you found clear, what could be improved, or any specific topics you'd like to see covered in more detail. We value constructive criticism and are committed to continuous improvement in all aspects of our service, including our privacy and cookie practices. Your suggestions directly contribute to a better experience for the entire TastyCooksy community.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.9. Legal Inquiries Related to Cookie Compliance</h4>
+                <p class="mb-4">For legal professionals or regulatory bodies with specific inquiries regarding TastyCooksy's compliance with data protection laws concerning cookies (e.g., GDPR, CCPA, ePrivacy Directive), please direct your communications to our legal department. We are committed to adhering to all applicable regulations and are prepared to cooperate with legitimate legal requests. Please provide your official credentials and a clear description of your inquiry. We will ensure that your request is handled by the appropriate legal and compliance personnel, who will provide a timely and comprehensive response. Our aim is to maintain full legal compliance and transparency in our data processing activities, including those involving cookies.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.10. Opting Out of Marketing Communications After Cookie Acceptance</h4>
+                <p class="mb-4">If you have accepted marketing cookies but later decide you no longer wish to receive targeted advertisements or marketing communications based on your browsing behavior, you can manage these preferences. While the cookie consent banner controls the setting of these cookies, you can often opt out of targeted advertising through industry-standard opt-out tools (like those from DAA, EDAA, NAI mentioned in Section 3.3). Additionally, if you are receiving marketing emails from us, each email will contain an "unsubscribe" link. If you have difficulty with any of these opt-out processes, please contact us, and we will assist you in ensuring your marketing preferences are respected across all channels. Your choice to control marketing communications is fully supported.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.11. Data Portability Requests for Cookie-Related Data</h4>
+                <p class="mb-4">Under certain data protection regulations, you may have the right to request a copy of the personal data we hold about you that was collected through cookies, in a structured, commonly used, and machine-readable format. This allows you to transfer your data to another service provider if you wish. If you wish to make a data portability request, please specify the type of data you are seeking (e.g., "all usage data collected via analytics cookies associated with my account"). We will verify your identity and provide the requested data in a suitable format, such as JSON or CSV, within the legally mandated timeframe. Our aim is to empower you with the ability to manage and move your data freely, in line with your rights.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.12. Concerns About Cookie Tracking Across Different Devices</h4>
+                <p class="mb-4">If you have concerns about how cookies or tracking technologies might be used to link your activity across different devices (e.g., your laptop and your smartphone), please contact us. While we primarily use cookies for site-specific functionality and aggregated analytics, some third-party advertising partners may employ cross-device tracking. We can explain our general practices and direct you to resources from those third parties that allow you to manage cross-device preferences. Understanding how your digital footprint is managed across various devices is important, and we are here to provide clarity and guidance on how to exercise your control over such tracking, to the extent it is within our influence or that of our partners.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.13. Requesting Erasure of Cookie-Related Personal Data</h4>
+                <p class="mb-4">If you wish to have your personal data that was collected via cookies erased from our systems, you may exercise your "right to be forgotten" under applicable data protection laws. Please contact us with a clear request for erasure. We will verify your identity to ensure the security of your data and then proceed to remove identifiable cookie-related data from our active systems, subject to any legal obligations for data retention. Please note that certain anonymized or aggregated data derived from cookie usage may persist for analytical purposes, but this data will not be linked back to your individual identity. We are committed to respecting your right to control your personal information and ensuring its removal when requested and legally permissible.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.14. Questions About Cookie Data Retention Periods</h4>
+                <p class="mb-4">You might have questions about how long specific types of cookies or the data collected by them are retained on your device or on our servers. The retention periods for cookies vary depending on their purpose (e.g., session cookies are temporary, persistent cookies have defined lifespans). If you require specific information about the retention period of a particular cookie or a category of cookie data, please contact us. We can provide details on our data retention policies for cookie-derived information, explaining why certain data is kept for specific durations (e.g., for analytics trends, or to remember your preferences). Transparency in data retention is key to our privacy commitment.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.15. Inquiries Regarding Cookie Consent for Minors</h4>
+                <p class="mb-4">TastyCooksy's Service is not intended for children under 13, and we do not knowingly collect personal data from them, including via cookies. If you are a parent or guardian and believe that a minor under your care has provided personal information or that cookies are being set on a minor's device without appropriate consent, please contact us immediately. We will investigate the matter thoroughly and take all necessary steps to remove any such data and prevent future collection in accordance with child privacy laws. Your vigilance helps us maintain a safe online environment for all users, especially children. We are committed to strict adherence to regulations concerning minors' data.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.16. Accessibility Concerns Related to Cookie Management Tools</h4>
+                <p class="mb-4">We strive to make our cookie consent banner and preference management tools accessible to all users. If you encounter any accessibility barriers or difficulties in interacting with our cookie management interfaces (e.g., issues with screen readers, keyboard navigation, or visual contrast), please inform us. Provide specific details about the accessibility challenge you are facing and the assistive technology you are using. Your feedback is invaluable in helping us improve the inclusivity of our website. We are committed to ensuring that all users, regardless of ability, can easily understand and control their cookie preferences on TastyCooksy.com. We will work to address any reported accessibility issues promptly.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.17. Questions About Cookie Data Used for Personalization</h4>
+                <p class="mb-4">If you have questions about how cookie data is specifically used to personalize your experience on TastyCooksy (e.g., recommending recipes, tailoring content), please contact us. We can explain the algorithms and data points that contribute to personalization, ensuring you understand how your preferences are learned and applied. While personalization aims to enhance your user experience, we want you to feel comfortable with how your data contributes to it. If you wish to limit personalization, we can guide you on how to adjust your cookie settings or other preferences to achieve this. Your comfort and control over your personalized experience are important to us.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.18. Inquiries About Cookie Data and Analytics Reporting</h4>
+                <p class="mb-4">You might be curious about the type of aggregated and anonymized data we collect through analytics cookies and how it contributes to our internal reporting and website improvements. If you have questions about our analytics practices, such as the metrics we track or how we use this data to make decisions, please reach out. We can provide a general overview of our analytics goals and how the data helps us enhance content, optimize site performance, and understand user trends. We emphasize that this data is used in an aggregated form and does not identify individual users, maintaining your privacy while allowing us to continuously refine our service.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.19. Concerns About Cookie Consent Records and Proof</h4>
+                <p class="mb-4">If you have concerns about the record of your cookie consent or require proof of your consent choices, please contact us. We maintain records of user consent to ensure compliance with data protection regulations. If you need confirmation of your consent status or a record of your past choices, please provide your email address or any other identifying information associated with your account. We will verify your identity and provide you with the relevant consent records, demonstrating our commitment to accountability and transparency in our cookie management practices. Your ability to review and confirm your consent is a fundamental right that we uphold.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.20. Questions Regarding Cookie Use by Embedded Content</h4>
+                <p class="mb-4">When TastyCooksy embeds content from third-party services (e.g., YouTube videos, social media posts), these services may set their own cookies. If you have specific questions about the cookies set by such embedded content, please contact us. While we cannot directly control these third-party cookies, we can explain our integration methods and direct you to the respective privacy policies of those third-party services. Understanding the scope of cookies from embedded content is important for your privacy, and we aim to provide as much clarity as possible, guiding you to the appropriate resources for managing those specific cookies directly with the third-party provider.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.21. Inquiries About Cookie Data and A/B Testing</h4>
+                <p class="mb-4">TastyCooksy may use cookies to conduct A/B testing, which involves showing different versions of our website to different user segments to see which performs better. If you have questions about how cookie data is used in A/B testing, or if you wish to understand how this might affect your experience, please contact us. We can explain the purpose of A/B testing (e.g., improving user interface, optimizing content delivery) and how cookies help us track which version of the site you are seeing. We assure you that data collected for A/B testing is used to improve the overall user experience and is not used to individually identify or target you beyond the test parameters.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.22. Requesting Information on Cookie-Related Data Processors</h4>
+                <p class="mb-4">You might want to know more about the third-party data processors (companies that process data on our behalf) that handle data collected via cookies. If you require information about our specific data processors involved in cookie management, analytics, or advertising, please contact us. We can provide details about the types of processors we engage and the purposes for which they process cookie-related data. We ensure that all our data processors are contractually obligated to protect your data and comply with relevant data protection laws. Transparency about our data processing ecosystem is a key aspect of our privacy commitment.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.23. Concerns About Cookie Data Used for Fraud Prevention</h4>
+                <p class="mb-4">TastyCooksy may use certain cookies and collected data for security purposes, including fraud prevention and detection of malicious activity. If you have concerns about how your cookie data might be used for these security measures, please contact us. We can explain the general principles behind our fraud prevention strategies and how anonymized or aggregated cookie data contributes to identifying suspicious patterns without compromising individual privacy. Our primary goal is to protect the integrity of our Service and the security of our users, and we do so with careful consideration for data privacy.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.24. Questions About Cookie Data and Website Performance</h4>
+                <p class="mb-4">Some cookies are used to monitor website performance and identify technical issues, helping us ensure a smooth and fast browsing experience. If you have questions about how cookie data contributes to website performance optimization, please reach out. We can explain how performance cookies help us track load times, server responses, and other technical metrics to ensure our site is always running efficiently. This data is typically aggregated and used to improve the technical infrastructure of TastyCooksy, ensuring that your cooking journey is uninterrupted by technical glitches and always loads quickly.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.25. Inquiries Regarding Cookie Data and User Experience Research</h4>
+                <p class="mb-4">We sometimes use cookie data (often anonymized) to conduct user experience research, helping us understand how users interact with new features or design elements. If you have questions about how cookie data is utilized for UX research, or if you wish to understand how this might impact your experience, please contact us. We can explain how this research helps us create a more intuitive and enjoyable platform, always with the aim of improving the user journey without compromising individual privacy. Your insights, even when anonymized, are invaluable in shaping the future of TastyCooksy.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.26. Requesting Human Review of Automated Cookie Decisions</h4>
+                <p class="mb-4">In some cases, our cookie management system might make automated decisions based on your preferences (e.g., blocking certain content if you decline specific cookies). If you believe an automated decision regarding your cookie preferences or access to content was incorrect or unfair, and you wish to request a human review, please contact us. Clearly explain the automated decision you are challenging and why you believe it should be reviewed. Our team will manually assess your situation and provide a personalized response, ensuring that your preferences are accurately interpreted and applied, and that any technical glitches are rectified. We value fairness and accuracy in all our automated processes.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.27. Questions About Cookie Data and Legal Compliance Audits</h4>
+                <p class="mb-4">TastyCooksy regularly conducts internal and external audits to ensure our cookie practices comply with all relevant data protection laws and regulations. If you have questions about how cookie data is handled during these compliance audits, or if you require information about our audit processes, please contact us. We can provide general information about our commitment to legal compliance and how we ensure that cookie data is processed in a lawful, fair, and transparent manner. Our dedication to legal adherence is unwavering, and we welcome inquiries that help us demonstrate this commitment.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.28. Inquiries Regarding Cookie Data and Data Minimization Principles</h4>
+                <p class="mb-4">TastyCooksy adheres to the principle of data minimization, meaning we only collect and retain cookie data that is necessary for the stated purposes. If you have questions about how we apply data minimization to our cookie practices, or if you believe we are collecting unnecessary data, please contact us. We can explain our rationale for collecting specific types of cookie data and how we ensure that our collection is limited to what is adequate, relevant, and necessary for providing our Service. Your input helps us continuously review and optimize our data collection practices to align with privacy-by-design principles.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.29. Concerns About Cookie Data and Data Accuracy</h4>
+                <p class="mb-4">While cookie data is often technical and less directly personal, it can still contribute to a profile of your preferences. If you have concerns about the accuracy of any data collected via cookies that might be linked to your profile, or if you believe certain cookie-derived preferences are incorrect, please contact us. We can investigate and, where possible, rectify any inaccuracies in data linked to your account. Ensuring the accuracy of your data, even that derived from cookie interactions, is important for providing you with a relevant and personalized experience on TastyCooksy.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.30. Questions About Cookie Data and International Data Transfers</h4>
+                <p class="mb-4">If TastyCooksy or its third-party service providers transfer cookie-related data across international borders, you might have questions about the safeguards in place for such transfers. If you require information about international data transfers involving cookie data, please contact us. We can explain the legal mechanisms (e.g., Standard Contractual Clauses, Privacy Shield frameworks if applicable) we rely on to ensure that your data remains protected when transferred outside your jurisdiction. Our commitment to data protection extends globally, and we ensure that robust safeguards are in place for all international data flows.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.31. Inquiries Regarding Cookie Data and Automated Decision-Making</h4>
+                <p class="mb-4">While TastyCooksy uses cookie data for personalization and recommendations, we generally do not make significant automated decisions that produce legal effects concerning you or similarly significantly affect you. If you have concerns about any perceived automated decision-making based on cookie data, or if you wish to understand how such data might influence automated processes, please contact us. We can clarify the extent to which cookie data contributes to automated processes and assure you of our commitment to transparent and fair decision-making practices, always providing avenues for human intervention where necessary.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.32. Questions About Cookie Data and Data Aggregation/Anonymization</h4>
+                <p class="mb-4">We often aggregate and anonymize cookie data for analytical and research purposes. If you have questions about our data aggregation and anonymization techniques, or how we ensure that data cannot be re-identified, please contact us. We can explain the methods we employ to ensure that once data is anonymized, it no longer relates to an identifiable individual, thereby protecting your privacy while allowing us to derive valuable insights for service improvement. Our commitment to robust anonymization practices is a cornerstone of our data handling philosophy.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.33. Concerns About Cookie Data and Data Security Incidents</h4>
+                <p class="mb-4">In the unlikely event of a data security incident involving cookie-related data, we have robust procedures in place for detection, containment, and notification. If you have questions about our data security incident response plan, or if you require information about a specific incident, please contact us. We are committed to transparency in the face of security incidents and will provide timely and accurate information as required by law. Your trust in our security measures is paramount, and we continuously work to protect your data from unauthorized access or breaches.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.34. Inquiries Regarding Cookie Data and Vendor Management</h4>
+                <p class="mb-4">TastyCooksy works with various third-party vendors who may set cookies on our website or process cookie-related data on our behalf. If you have questions about our vendor management practices concerning cookies, or how we vet and monitor our third-party partners, please contact us. We can explain our due diligence processes, contractual agreements, and ongoing monitoring to ensure that our vendors adhere to high standards of data protection and privacy compliance. Our commitment to data security extends to our entire ecosystem of partners and service providers.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.35. Questions About Cookie Data and User Profiling</h4>
+                <p class="mb-4">Some cookies may contribute to building a profile of your interests (e.g., for targeted advertising or content recommendations). If you have questions about how cookie data is used for user profiling, or if you wish to limit such profiling, please contact us. We can explain the extent of profiling conducted and how you can manage your preferences to control the level of personalization you receive. Our goal is to enhance your experience through relevant content, but always with your consent and control over your data. We are transparent about our profiling practices and provide mechanisms for you to opt-out.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.36. Inquiries Regarding Cookie Data and Consent Withdrawal Mechanisms</h4>
+                <p class="mb-4">You have the right to withdraw your consent for non-essential cookies at any time. If you have questions about the mechanisms available for withdrawing your cookie consent, or if you encounter any difficulties in doing so, please contact us. We can guide you through the process of adjusting your preferences via our consent banner or browser settings. Ensuring that consent withdrawal is as easy as granting it is a key principle of our cookie policy, empowering you with continuous control over your data choices.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.37. Questions About Cookie Data and Data Portability Formats</h4>
+                <p class="mb-4">If you make a data portability request for cookie-related data, you might have questions about the format in which the data will be provided. If you require information about the specific formats (e.g., JSON, CSV, XML) we use for data portability, please contact us. We aim to provide data in commonly used, machine-readable formats to facilitate easy transfer to other services. We can explain the technical specifications of the data export, ensuring that you receive your data in a usable and interoperable manner, in line with your data portability rights.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.38. Concerns About Cookie Data and Data Linkage</h4>
+                <p class="mb-4">You might have concerns about whether cookie data is linked with other personal data we hold about you. If you have questions about data linkage practices concerning cookies, please contact us. We can explain how different data points are connected (or intentionally kept separate) to provide our services and personalize your experience. Our aim is to be transparent about how we build a comprehensive view of your preferences while respecting your privacy. We will clarify how linkage occurs and how you can manage the data points that contribute to it.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.39. Inquiries Regarding Cookie Data and Consent Management Platform (CMP)</h4>
+                <p class="mb-4">TastyCooksy may utilize a Consent Management Platform (CMP) to manage user cookie preferences and ensure compliance. If you have questions about our CMP, how it operates, or how it records your consent, please contact us. We can provide information about the CMP provider, its functionalities, and how it helps us maintain a transparent and compliant cookie consent process. Understanding the technology behind our consent management empowers you with knowledge about how your choices are recorded and respected across our platform.</p>
+
+                <h4 class="text-xl font-semibold mt-6 mb-2">6.40. General Contact for Any Unaddressed Cookie Concerns</h4>
+                <p class="mb-4">If your specific cookie-related concern or question has not been addressed by the scenarios above, or if you simply prefer to speak with someone directly, please do not hesitate to contact us. We are committed to addressing all legitimate privacy and cookie-related inquiries. Provide a clear description of your concern, and our dedicated privacy team will review it thoroughly and provide a comprehensive response. Your feedback, no matter how unique, helps us continuously improve our policies and practices, ensuring that TastyCooksy remains a trusted and user-friendly platform for all your cooking needs.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-slate-gray text-cloud-white py-10 rounded-t-3xl shadow-inner">
+        <div class="container flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div class="mb-6 md:mb-0">
+                <h3 class="text-2xl font-bold text-zesty-lemon-yellow mb-2">TastyCooksy</h3>
+                <p class="text-sm opacity-80">Fast. Fun. Foolproof. &copy; 2025</p>
+                <p class="text-sm opacity-80 mt-1">All rights reserved.</p>
+            </div>
+            <div class="mb-6 md:mb-0">
+                <h4 class="text-lg font-semibold text-fresh-mint-green mb-2">Contact Us</h4>
+                <p class="text-sm opacity-80">TastyCooksy Headquarters</p>
+                <p class="text-sm opacity-80">123 Culinary Lane, Flavor Town</p>
+                <p class="text-sm opacity-80">Kitchenland, KL 12345</p>
+                <p class="text-sm opacity-80">Email: <a href="mailto:hello@tastycooksy.com" class="text-zesty-lemon-yellow hover:underline">hello@tastycooksy.com</a></p>
+                <p class="text-sm opacity-80">Phone: <a href="tel:+15551234567" class="text-zesty-lemon-yellow hover:underline">+1 (555) 123-4567</a></p>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold text-fresh-mint-green mb-2">Quick Links</h4>
+                <ul class="space-y-1">
+                    <li><a href="index.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Home</a></li>
+                    <li><a href="blog.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Blog</a></li>
+                    <li><a href="privacy.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Terms of Service</a></li>
+                    <li><a href="cookies.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Cookie Policy</a></li>
+                    <li><a href="contact.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent Dialogue Box -->
+    <div id="cookie-consent-banner">
+        <p>This website uses cookies to ensure you get the best experience on TastyCooksy. By clicking "Accept All Cookies", you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts. For more information, please read our <a href="cookies.html" class="text-zesty-lemon-yellow font-semibold hover:underline">Cookie Policy</a>.</p>
+        <div id="cookie-consent-buttons">
+            <button id="cookie-accept">Accept All Cookies</button>
+            <button id="cookie-decline">Decline Non-Essential</button>
+            <button id="cookie-learn-more" onclick="window.location.href='cookies.html'">Learn More</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cookieBanner = document.getElementById('cookie-consent-banner');
+            const acceptButton = document.getElementById('cookie-accept');
+            const declineButton = document.getElementById('cookie-decline');
+            const learnMoreButton = document.getElementById('cookie-learn-more');
+
+            // Function to set a cookie
+            function setCookie(name, value, days) {
+                let expires = "";
+                if (days) {
+                    const date = new Date();
+                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                    expires = "; expires=" + date.toUTCString();
+                }
+                document.cookie = name + "=" + (value || "") + expires + "; path=/";
+            }
+
+            // Function to get a cookie
+            function getCookie(name) {
+                const nameEQ = name + "=";
+                const ca = document.cookie.split(';');
+                for(let i=0; i < ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+                }
+                return null;
+            }
+
+            // Check if cookie consent has been given
+            const consentGiven = getCookie('tastycooksy_cookie_consent');
+
+            if (consentGiven) {
+                cookieBanner.classList.add('hidden'); // Hide if consent already given
+            } else {
+                cookieBanner.classList.remove('hidden'); // Show if no consent yet
+            }
+
+            // Event listeners for buttons
+            acceptButton.addEventListener('click', function() {
+                setCookie('tastycooksy_cookie_consent', 'accepted', 365); // Consent for 1 year
+                cookieBanner.classList.add('hidden');
+                console.log('Cookies accepted.');
+                // Here you would typically load analytics scripts or other cookie-dependent services
+            });
+
+            declineButton.addEventListener('click', function() {
+                setCookie('tastycooksy_cookie_consent', 'declined', 365); // Record decline for 1 year
+                cookieBanner.classList.add('hidden');
+                console.log('Non-essential cookies declined.');
+                // Here you would typically ensure non-essential cookies are not set
+            });
+
+            // The "Learn More" button already has an onclick to navigate to this page.
+        });
+    </script>
+
+</body>
+</html>

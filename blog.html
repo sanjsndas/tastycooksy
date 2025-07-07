@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — TastyCooksy</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FAFAFA; /* Cloud White */
+            color: #000000; /* Black for text */
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        /* Custom Tailwind Configuration for colors and font */
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        @layer base {
+            :root {
+                --color-zesty-lemon-yellow: #FFEB3B;
+                --color-bold-berry-red: #E53935;
+                --color-cloud-white: #FAFAFA;
+                --color-fresh-mint-green: #66BB6A;
+                --color-slate-gray: #455A64;
+            }
+        }
+
+        .bg-zesty-lemon-yellow { background-color: var(--color-zesty-lemon-yellow); }
+        .text-zesty-lemon-yellow { color: var(--color-zesty-lemon-yellow); }
+        .bg-bold-berry-red { background-color: var(--color-bold-berry-red); }
+        .text-bold-berry-red { color: var(--color-bold-berry-red); }
+        .bg-cloud-white { background-color: var(--color-cloud-white); }
+        .text-cloud-white { color: var(--color-cloud-white); }
+        .bg-fresh-mint-green { background-color: var(--color-fresh-mint-green); }
+        .text-fresh-mint-green { color: var(--color-fresh-mint-green); }
+        .bg-slate-gray { background-color: var(--color-slate-gray); }
+        .text-black-main { color: #000000; } 
+
+        /* Specific styles for navigation links */
+        nav a {
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            color: #E53935; /* Bold Berry Red on hover */
+            transform: translateY(-2px);
+        }
+        .btn-primary {
+            background-color: #FFEB3B; /* Zesty Lemon Yellow */
+            color: #000000; /* Black */
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px; /* Fully rounded */
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary:hover {
+            background-color: #FFD600; /* Slightly darker yellow */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        .btn-secondary {
+            background-color: #66BB6A; /* Fresh Mint Green */
+            color: #FAFAFA; /* Cloud White */
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-secondary:hover {
+            background-color: #5CB85C; /* Slightly darker green */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        .card {
+            background-color: #FFFFFF; /* Pure White for cards */
+            border-radius: 1rem; /* Rounded corners */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+        .section-heading {
+            color: #E53935; /* Bold Berry Red */
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #E53935, #FFEB3B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="font-inter bg-cloud-white text-black-main">
+
+    <!-- Header Section -->
+    <header class="bg-cloud-white shadow-md py-4">
+        <div class="container flex flex-col md:flex-row justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center mb-4 md:mb-0">
+                <img src="https://placehold.co/60x60/FFEB3B/455A64?text=TC" alt="TastyCooksy Logo" class="rounded-full mr-3 shadow-md">
+                <h1 class="text-3xl font-bold text-bold-berry-red">TastyCooksy</h1>
+            </div>
+            <!-- Navigation -->
+            <nav>
+                <ul class="flex flex-wrap justify-center md:justify-end space-x-4 md:space-x-8 text-lg font-medium">
+                    <li><a href="index.html" class="text-black-main hover:text-bold-berry-red rounded-md px-3 py-2">Home</a></li>
+                    <li><a href="blog.html" class="text-black-main hover:text-bold-berry-red rounded-md px-3 py-2">Blog</a></li>
+                    <li><a href="privacy.html" class="text-black-main hover:text-bold-berry-red rounded-md px-3 py-2">Privacy</a></li>
+                    <li><a href="terms.html" class="text-black-main hover:text-bold-berry-red rounded-md px-3 py-2">Terms</a></li>
+                    <li><a href="cookies.html" class="text-black-main hover:text-bold-berry-red rounded-md px-3 py-2">Cookies</a></li>
+                    <li><a href="contact.html" class="text-black-main hover:text-bold-berry-red rounded-md px-3 py-2">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container py-16">
+        <section class="mb-16 card p-8 bg-zesty-lemon-yellow text-black-main">
+            <h2 class="section-heading text-bold-berry-red">📝 The TastyCooksy Blog: Quick Bites & Kitchen Wins!</h2>
+            <p class="text-center text-lg mb-10 max-w-3xl mx-auto">Welcome to the TastyCooksy Blog, your go-to source for quick cooking tips, fun kitchen hacks, and inspiring stories from our community. Whether you're a seasoned pro or just starting your culinary journey, we've got something delicious for everyone. Dive in and discover how easy and enjoyable cooking can be!</p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                <!-- Main Blog Posts Section -->
+                <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Blog Post 1 -->
+                    <div class="card p-6 flex flex-col items-center text-center">
+                        <img src="b1.webp" alt="Blog Post Image 1" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">5 Genius Hacks for Faster Weeknight Dinners</h3>
+                        <p class="text-sm text-black-main mb-4">Tired of spending hours in the kitchen after a long day? Discover our top 5 foolproof strategies to cut down cooking time without sacrificing flavor. From smart prep to clever shortcuts, these tips will revolutionize your weeknights!</p>
+                        <a href="#" class="btn-primary text-sm mt-auto">Read More</a>
+                    </div>
+                    <!-- Blog Post 2 -->
+                    <div class="card p-6 flex flex-col items-center text-center">
+                        <img src="b2.webp" alt="Blog Post Image 2" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">Beyond Ramen: Delicious & Cheap Student Meals</h3>
+                        <p class="text-sm text-black-main mb-4">Sticking to a student budget doesn't mean bland meals. We've rounded up incredible, wallet-friendly recipes that are packed with flavor and nutrition. Say goodbye to instant noodles and hello to culinary creativity!</p>
+                        <a href="#" class="btn-primary text-sm mt-auto">Read More</a>
+                    </div>
+                    <!-- Blog Post 3 -->
+                    <div class="card p-6 flex flex-col items-center text-center">
+                        <img src="b3.webp" alt="Blog Post Image 3" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">Mastering Your First Omelette: A Foolproof Guide</h3>
+                        <p class="text-sm text-black-main mb-4">The omelette: a breakfast classic that seems simple but can be tricky. Our step-by-step guide, complete with visual tips, will help you whip up a perfectly fluffy omelette every single time. Breakfast success guaranteed!</p>
+                        <a href="#" class="btn-primary text-sm mt-auto">Read More</a>
+                    </div>
+                    <!-- Blog Post 4 -->
+                    <div class="card p-6 flex flex-col items-center text-center">
+                        <img src="b4.webp" alt="Blog Post Image 4" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">The Magic of One-Pot Meals: Less Mess, More Flavor</h3>
+                        <p class="text-sm text-black-main mb-4">Discover the ultimate secret to stress-free cooking: one-pot meals! Learn why everything tastes better when cooked together and explore our favorite recipes that minimize cleanup and maximize deliciousness.</p>
+                        <a href="#" class="btn-primary text-sm mt-auto">Read More</a>
+                    </div>
+                    <!-- Blog Post 5 -->
+                    <div class="card p-6 flex flex-col items-center text-center">
+                        <img src="b5.webp" alt="Blog Post Image 5" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">Seasonal Eating: Fresh Flavors for Every Month</h3>
+                        <p class="text-sm text-black-main mb-4">Eating seasonally means tastier, healthier, and often cheaper meals! Explore our guide to what's in season and how to incorporate fresh, vibrant produce into your everyday cooking for maximum flavor.</p>
+                        <a href="#" class="btn-primary text-sm mt-auto">Read More</a>
+                    </div>
+                    <!-- Blog Post 6 -->
+                    <div class="card p-6 flex flex-col items-center text-center">
+                        <img src="b6.avif" alt="Blog Post Image 6" class="w-full h-48 object-cover rounded-lg mb-4 shadow-md">
+                        <h3 class="text-xl font-semibold mb-2">Spice Up Your Pantry: Essential Spices for Beginners</h3>
+                        <p class="text-sm text-black-main mb-4">Feeling overwhelmed by the spice aisle? We break down the must-have spices for every beginner's pantry and show you how to use them to add incredible depth and flavor to your foolproof meals.</p>
+                        <a href="#" class="btn-primary text-sm mt-auto">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Sidebar Section -->
+                <div class="lg:col-span-1 space-y-8">
+                    <!-- Categories -->
+                    <div class="card p-6 bg-cloud-white">
+                        <h3 class="text-xl font-bold text-bold-berry-red mb-4">Categories</h3>
+                        <ul class="space-y-2 text-black-main">
+                            <li><a href="#" class="hover:text-fresh-mint-green">Quick Meals (25)</a></li>
+                            <li><a href="#" class="hover:text-fresh-mint-green">Beginner Basics (18)</a></li>
+                            <li><a href="#" class="hover:text-fresh-mint-green">Budget Bites (12)</a></li>
+                            <li><a href="#" class="hover:text-fresh-mint-green">Snack Hacks (8)</a></li>
+                            <li><a href="#" class="hover:text-fresh-mint-green">Sweet Treats (10)</a></li>
+                            <li><a href="#" class="hover:text-fresh-mint-green">Meal Planning (7)</a></li>
+                        </ul>
+                    </div>
+                    <!-- Popular Posts -->
+                    <div class="card p-6 bg-cloud-white">
+                        <h3 class="text-xl font-bold text-bold-berry-red mb-4">Popular Posts</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div>
+                                    <h4 class="text-md font-semibold"><a href="#" class="hover:text-fresh-mint-green">The Secret to Perfect Pasta Every Time</a></h4>
+                                    <p class="text-xs text-black-main opacity-75">Learn the simple tricks for non-sticky, al dente perfection.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div>
+                                    <h4 class="text-md font-semibold"><a href="#" class="hover:text-fresh-mint-green">10 Must-Have Kitchen Tools for New Cooks</a></h4>
+                                    <p class="text-xs text-black-main opacity-75">Equip your kitchen without breaking the bank.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div>
+                                    <h4 class="text-md font-semibold"><a href="#" class="hover:text-fresh-mint-green">Meal Prep Sunday: Your Key to Stress-Free Weekdays</a></h4>
+                                    <p class="text-xs text-black-main opacity-75">Simple steps to plan and prep your meals for the week ahead.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-slate-gray text-cloud-white py-10 rounded-t-3xl shadow-inner">
+        <div class="container flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div class="mb-6 md:mb-0">
+                <h3 class="text-2xl font-bold text-zesty-lemon-yellow mb-2">TastyCooksy</h3>
+                <p class="text-sm opacity-80">Fast. Fun. Foolproof. &copy; 2025</p>
+                <p class="text-sm opacity-80 mt-1">All rights reserved.</p>
+            </div>
+            <div class="mb-6 md:mb-0">
+                <h4 class="text-lg font-semibold text-fresh-mint-green mb-2">Contact Us</h4>
+                <p class="text-sm opacity-80">TastyCooksy Headquarters</p>
+                <p class="text-sm opacity-80">123 Culinary Lane, Flavor Town</p>
+                <p class="text-sm opacity-80">Kitchenland, KL 12345</p>
+                <p class="text-sm opacity-80">Email: <a href="mailto:hello@tastycooksy.com" class="text-zesty-lemon-yellow hover:underline">hello@tastycooksy.com</a></p>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold text-fresh-mint-green mb-2">Quick Links</h4>
+                <ul class="space-y-1">
+                    <li><a href="index.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Home</a></li>
+                    <li><a href="blog.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Blog</a></li>
+                    <li><a href="privacy.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Terms of Service</a></li>
+                    <li><a href="cookies.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Cookie Policy</a></li>
+                    <li><a href="contact.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

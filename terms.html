@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — TastyCooksy</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FAFAFA; /* Cloud White */
+            color: #000000; /* Black for text */
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        /* Custom Tailwind Configuration for colors and font */
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        @layer base {
+            :root {
+                --color-zesty-lemon-yellow: #FFEB3B;
+                --color-bold-berry-red: #E53935;
+                --color-cloud-white: #FAFAFA;
+                --color-fresh-mint-green: #66BB6A;
+                --color-slate-gray: #455A64;
+            }
+        }
+
+        .bg-zesty-lemon-yellow { background-color: var(--color-zesty-lemon-yellow); }
+        .text-zesty-lemon-yellow { color: var(--color-zesty-lemon-yellow); }
+        .bg-bold-berry-red { background-color: var(--color-bold-berry-red); }
+        .text-bold-berry-red { color: var(--color-bold-berry-red); }
+        .bg-cloud-white { background-color: var(--color-cloud-white); }
+        .text-cloud-white { color: var(--color-cloud-white); }
+        .bg-fresh-mint-green { background-color: var(--color-fresh-mint-green); }
+        .text-fresh-mint-green { color: var(--color-fresh-mint-green); }
+        .bg-slate-gray { background-color: var(--color-slate-gray); }
+        .text-black-main { color: #000000; } 
+
+        /* Specific styles for navigation links */
+        nav a {
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            color: #E53935; /* Bold Berry Red on hover */
+            transform: translateY(-2px);
+        }
+        .btn-primary {
+            background-color: #FFEB3B; /* Zesty Lemon Yellow */
+            color: #000000; /* Black */
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px; /* Fully rounded */
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary:hover {
+            background-color: #FFD600; /* Slightly darker yellow */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        .btn-secondary {
+            background-color: #66BB6A; /* Fresh Mint Green */
+            color: #FAFAFA; /* Cloud White */
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-secondary:hover {
+            background-color: #5CB85C; /* Slightly darker green */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        .card {
+            background-color: #FFFFFF; /* Pure White for cards */
+            border-radius: 1rem; /* Rounded corners */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+        .section-heading {
+            color: #E53935; /* Bold Berry Red */
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #E53935, #FFEB3B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="font-inter bg-cloud-white text-black-main">
+
+    <!-- Header Section -->
+    <header class="bg-cloud-white shadow-md py-4">
+        <div class="container flex flex-col md:flex-row justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center mb-4 md:mb-0">
+                <img src="https://placehold.co/60x60/FFEB3B/455A64?text=TC" alt="TastyCooksy Logo" class="rounded-full mr-3 shadow-md">
+                <h1 class="text-3xl font-bold text-bold-berry-red">TastyCooksy</h1>
+            </div>
+            <!-- Navigation -->
+            <nav>
+                <ul class="flex flex-wrap justify-center md:justify-end space-x-4 md:space-x-8 text-lg font-medium">
+                    <li><a href="index.html" class="text-black-main hover:text-bold-berry-red rounded-md px-3 py-2">Home</a></li>
+                    <li><a href="blog.html" class="text-black-main hover:text-bold-berry-red rounded-md px-3 py-2">Blog</a></li>
+                    <li><a href="privacy.html" class="text-black-main hover:text-bold-berry-red rounded-md px-3 py-2">Privacy</a></li>
+                    <li><a href="terms.html" class="text-black-main hover:text-bold-berry-red rounded-md px-3 py-2">Terms</a></li>
+                    <li><a href="cookies.html" class="text-black-main hover:text-bold-berry-red rounded-md px-3 py-2">Cookies</a></li>
+                    <li><a href="contact.html" class="text-black-main hover:text-bold-berry-red rounded-md px-3 py-2">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container py-16">
+        <section class="mb-16 card p-8 bg-fresh-mint-green text-black">
+            <h2 class="section-heading text-cloud-white">📜 Terms of Service</h2>
+            <div class="text-sm leading-relaxed opacity-90">
+                <p class="mb-4">Welcome to TastyCooksy! These Terms of Service ("Terms") govern your access to and use of the TastyCooksy website and its related services, features, content, and applications (collectively, the "Service"). By accessing or using the Service, you agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, please do not use the Service. We encourage you to read these Terms carefully, as they form a legally binding agreement between you and TastyCooksy. Our goal is to provide a fun, fast, and foolproof cooking experience, and these terms help ensure a safe and respectful environment for all users.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">1. Acceptance of Terms</h3>
+                <p class="mb-4">By accessing or using any part of the TastyCooksy Service, you signify your acceptance of these Terms of Service. If you are using the Service on behalf of an organization, you are agreeing to these Terms for that organization and representing that you have the authority to bind that organization to these Terms. In that case, "you" and "your" will refer to that organization. You must be at least 13 years old to use our Service. If you are under 18, you must have permission from a parent or legal guardian to use the Service. Your continued use of the Service after any modifications to these Terms will constitute your acknowledgment and agreement to the modified Terms.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">2. Changes to Terms</h3>
+                <p class="mb-4">TastyCooksy reserves the right, at its sole discretion, to modify or replace these Terms at any time. If a revision is material, we will try to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion. We will notify you of any changes by posting the new Terms of Service on this page and updating the "Last updated" date. We may also notify you via email or a prominent notice on our Service. Your continued use of the Service after any such changes constitutes your acceptance of the new Terms of Service. If you do not agree to the new Terms, you are no longer authorized to use the Service.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">3. User Accounts</h3>
+                <p class="mb-4">To access certain features of the Service, such as saving favorite recipes or participating in the community wall, you may be required to create an account. When creating an account, you agree to:
+                <ul class="list-disc list-inside ml-4 mb-4">
+                    <li>Provide accurate, current, and complete information as prompted by our registration form.</li>
+                    <li>Maintain the security of your password and identification.</li>
+                    <li>Promptly update your registration data and any other information you provide to TastyCooksy to keep it accurate, current, and complete.</li>
+                    <li>Be fully responsible for all activities that occur under your account and any other actions taken in connection with your account.</li>
+                    <li>Notify TastyCooksy immediately of any unauthorized use of your account or any other breach of security.</li>
+                </ul>
+                TastyCooksy cannot and will not be liable for any loss or damage arising from your failure to comply with these obligations. We reserve the right to suspend or terminate your account and refuse any and all current or future use of the Service if any information provided proves to be inaccurate, not current, or incomplete, or if we have reasonable grounds to suspect that such information is inaccurate, not current, or incomplete.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">4. Content</h3>
+                <p class="mb-4">Our Service allows you to post, link, store, share, and otherwise make available certain information, text, graphics, videos, or other material ("Content"). You are responsible for the Content that you post on or through the Service, including its legality, reliability, and appropriateness.
+                <ul class="list-disc list-inside ml-4 mb-4">
+                    <li><strong>Your Content:</strong> By posting Content to the Service, you grant us a non-exclusive, worldwide, royalty-free, perpetual, irrevocable, and sublicensable right to use, reproduce, modify, adapt, publish, translate, create derivative works from, distribute, and display such Content throughout the world in any media. You represent and warrant that: (i) the Content is yours (you own it) or you have the right to use it and grant us the rights and license as provided in these Terms, and (ii) the posting of your Content on or through the Service does not violate the privacy rights, publicity rights, copyrights, contract rights, or any other rights of any person.</li>
+                    <li><strong>TastyCooksy Content:</strong> All content provided on TastyCooksy.com, including recipes, articles, videos, graphics, designs, and software, is the property of TastyCooksy or its licensors and is protected by copyright, trademark, and other intellectual property laws. You may not reproduce, distribute, modify, create derivative works of, publicly display, publicly perform, republish, download, store, or transmit any of the material on our Service, except as generally and ordinarily permitted through the Service's functionality.</li>
+                    <li><strong>Accuracy of Content:</strong> While we strive to provide accurate and high-quality content, including recipes and cooking guides, we do not warrant the completeness, reliability, or accuracy of any Content on the Service. The information is provided for general guidance only, and individual results may vary.</li>
+                </ul></p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">5. Prohibited Uses</h3>
+                <p class="mb-4">You may use the Service only for lawful purposes and in accordance with these Terms. You agree not to use the Service:
+                <ul class="list-disc list-inside ml-4 mb-4">
+                    <li>In any way that violates any applicable national, federal, state, local, or international law or regulation.</li>
+                    <li>For the purpose of exploiting, harming, or attempting to exploit or harm minors in any way by exposing them to inappropriate content or otherwise.</li>
+                    <li>To transmit, or procure the sending of, any advertising or promotional material, including any "junk mail," "chain letter," "spam," or any other similar solicitation.</li>
+                    <li>To impersonate or attempt to impersonate TastyCooksy, a TastyCooksy employee, another user, or any other person or entity.</li>
+                    <li>To engage in any other conduct that restricts or inhibits anyone's use or enjoyment of the Service, or which, as determined by us, may harm TastyCooksy or users of the Service or expose them to liability.</li>
+                    <li>To introduce any viruses, Trojan horses, worms, logic bombs, or other material that is malicious or technologically harmful.</li>
+                    <li>To attempt to gain unauthorized access to, interfere with, damage, or disrupt any parts of the Service, the server on which the Service is stored, or any server, computer, or database connected to the Service.</li>
+                    <li>To attack the Service via a denial-of-service attack or a distributed denial-of-service attack.</li>
+                </ul></p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">6. Intellectual Property Rights</h3>
+                <p class="mb-4">The Service and its original content (excluding Content provided by users), features, and functionality are and will remain the exclusive property of TastyCooksy and its licensors. The Service is protected by copyright, trademark, and other laws of both the United States and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of TastyCooksy. All rights not expressly granted to you are reserved by TastyCooksy. You acknowledge that all intellectual property rights in the Service belong to us or our licensors, and you agree not to infringe any such rights.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">7. Disclaimer of Warranties</h3>
+                <p class="mb-4">Your use of the Service is at your sole risk. The Service is provided on an "AS IS" and "AS AVAILABLE" basis. TastyCooksy expressly disclaims all warranties of any kind, whether express or implied, including, but not limited to, the implied warranties of merchantability, fitness for a particular purpose, non-infringement, and course of performance.
+                <ul class="list-disc list-inside ml-4 mb-4">
+                    <li>TastyCooksy does not warrant that (i) the Service will function uninterrupted, secure, or available at any particular time or location; (ii) any errors or defects will be corrected; (iii) the Service is free of viruses or other harmful components; or (iv) the results of using the Service will meet your requirements.</li>
+                    <li>Any content downloaded or otherwise obtained through the use of the Service is done at your own discretion and risk and you will be solely responsible for any damage to your computer system or loss of data that results from the download of any such material.</li>
+                </ul></p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">8. Limitation of Liability</h3>
+                <p class="mb-4">In no event shall TastyCooksy, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the Service; (ii) any conduct or content of any third party on the Service; (iii) any content obtained from the Service; and (iv) unauthorized access, use, or alteration of your transmissions or content, whether based on warranty, contract, tort (including negligence), or any other legal theory, whether or not we have been informed of the possibility of such damage, and even if a remedy set forth herein is found to have failed of its essential purpose. Some jurisdictions do not allow the exclusion of certain warranties or the exclusion or limitation of liability for consequential or incidental damages, so the limitations above may not apply to you.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">9. Indemnification</h3>
+                <p class="mb-4">You agree to defend, indemnify, and hold harmless TastyCooksy and its licensee and licensors, and their employees, contractors, agents, officers, and directors, from and against any and all claims, damages, obligations, losses, liabilities, costs, or debt, and expenses (including but not limited to attorney's fees), resulting from or arising out of a) your use and access of the Service, by you or any person using your account and password; b) a breach of these Terms; or c) Content posted on the Service. This indemnification obligation will survive these Terms and your use of the Service.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">10. Governing Law and Jurisdiction</h3>
+                <p class="mb-4">These Terms shall be governed and construed in accordance with the laws of [Your Country/State, e.g., the State of California, United States], without regard to its conflict of law provisions. Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. These Terms constitute the entire agreement between us regarding our Service, and supersede and replace any prior agreements we might have between us regarding the Service.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">11. Termination</h3>
+                <p class="mb-4">We may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms. Upon termination, your right to use the Service will immediately cease. If you wish to terminate your account, you may simply discontinue using the Service or contact us to request account deletion. All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity, and limitations of liability.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">12. Severability</h3>
+                <p class="mb-4">If any provision of these Terms is found to be unenforceable or invalid under any applicable law, such unenforceability or invalidity shall not render these Terms unenforceable or invalid as a whole. Such provision shall be deleted without affecting the remaining provisions herein. We will replace the invalid or unenforceable provision with a valid and enforceable provision that most closely achieves the intent and economic effect of the invalid or unenforceable provision.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">13. Entire Agreement</h3>
+                <p class="mb-4">These Terms, together with the Privacy Policy and any other legal notices published by TastyCooksy on the Service, constitute the entire agreement between you and TastyCooksy concerning the Service. They supersede all prior or contemporaneous communications, whether electronic, oral, or written, between you and TastyCooksy with respect to the Service. A printed version of these Terms and of any notice given in electronic form shall be admissible in judicial or administrative proceedings based upon or relating to these Terms to the same extent and subject to the same conditions as other business documents and records originally generated and maintained in printed form.</p>
+
+                <h3 class="text-lg font-semibold mt-6 mb-2">14. Contact Us</h3>
+                <p class="mb-4">If you have any questions about these Terms of Service, please contact us:</p>
+                <ul class="list-disc list-inside ml-4 mb-4">
+                    <li>By email: <a href="mailto:terms@tastycooksy.com" class="text-zesty-lemon-yellow hover:underline">terms@tastycooksy.com</a></li>
+                    <li>By visiting this page on our website: <a href="contact.html" class="text-zesty-lemon-yellow hover:underline">TastyCooksy Contact Page</a></li>
+                    <li>By mail: TastyCooksy Legal Department, 123 Culinary Lane, Flavor Town, Kitchenland, KL 12345.</li>
+                </ul>
+
+                <p class="mt-8 text-center text-base">Last updated: July 5, 2025</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-slate-gray text-cloud-white py-10 rounded-t-3xl shadow-inner">
+        <div class="container flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div class="mb-6 md:mb-0">
+                <h3 class="text-2xl font-bold text-zesty-lemon-yellow mb-2">TastyCooksy</h3>
+                <p class="text-sm opacity-80">Fast. Fun. Foolproof. &copy; 2025</p>
+                <p class="text-sm opacity-80 mt-1">All rights reserved.</p>
+            </div>
+            <div class="mb-6 md:mb-0">
+                <h4 class="text-lg font-semibold text-fresh-mint-green mb-2">Contact Us</h4>
+                <p class="text-sm opacity-80">TastyCooksy Headquarters</p>
+                <p class="text-sm opacity-80">123 Culinary Lane, Flavor Town</p>
+                <p class="text-sm opacity-80">Kitchenland, KL 12345</p>
+                <p class="text-sm opacity-80">Email: <a href="mailto:hello@tastycooksy.com" class="text-zesty-lemon-yellow hover:underline">hello@tastycooksy.com</a></p>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold text-fresh-mint-green mb-2">Quick Links</h4>
+                <ul class="space-y-1">
+                    <li><a href="index.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Home</a></li>
+                    <li><a href="blog.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Blog</a></li>
+                    <li><a href="privacy.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Terms of Service</a></li>
+                    <li><a href="cookies.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Cookie Policy</a></li>
+                    <li><a href="contact.html" class="text-cloud-white hover:text-zesty-lemon-yellow text-sm">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
